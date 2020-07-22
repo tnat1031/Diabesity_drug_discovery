@@ -16,6 +16,8 @@ library(GOSemSim)
 library(data.table)
 library(cmapR)
 library(parallel)
+library(ggplot2)
+library(ggrepel)
 source("functions.R")
 ```
 
@@ -80,8 +82,61 @@ names(tissue_res) <- tissues
 saveRDS(tissue_res, "tissue_res_Jiang.rds")
 ```
 
+Read in p-values and collate into a table for each tissue.
+```{r}
+pval_list <- readRDS("pval_lists_all_tissues_nperm_100_Jiang.rds")
+```
+
+```{r}
+tissue_tables <- sapply(tissues, function(x) {
+    res <- tissue_res[[x]]
+    pvals <- pval_list[[x]]
+    idx1 <- match(names(res), names(pvals))
+    idx2 <- match(names(res), names(drug_targets[[x]]))
+    data.table(drug = names(res),
+               # number of genes in the disease and drug lists
+               ngene_disease = length(disease_genes[[x]]),
+               ngene_drug = lengths(drug_targets[[x]][idx2]),
+               semsim = res,
+               pval = pvals[idx1])
+}, USE.NAMES = T, simplify = F)
+```
+
+```{r}
+# plot score vs. p-value for each tissue
+for (x in tissues) {
+    tmp <- tissue_tables[[x]]
+    p <- ggplot(tmp, aes(x=semsim, y=pval)) +
+        scale_y_reverse() +
+        geom_point() +
+        ggtitle(x)
+        # geom_label_repel(aes(label=drug), data=tmp[pval <= 0.05])
+    print(p)
+}
+```
 
 
+Collate into a single large table. Include NA values for drugs that did not have a gene signature in a given tissue.
+```{r}
+# update column names so we can merge
+names_to_change <- c("semsim", "pval", "ngene_disease", "ngene_drug")
+for (x in tissues) {
+    setnames(tissue_tables[[x]], names_to_change,
+             paste(x, names_to_change, sep="_"))
+}
+```
+
+```{r}
+# merge them all together, keeping all entries from each table (all = T)
+res_df <- Reduce(function(x, y) {
+    merge(x, y, all=T)
+}, tissue_tables)
+```
+
+```{r}
+# save
+fwrite(res_df, "results_table_collated_nperm_100_Jiang.txt", sep="\t")
+```
 
 
 
