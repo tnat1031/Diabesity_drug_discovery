@@ -1,0 +1,66 @@
+---
+title: "Collate Data"
+output: html_notebook
+---
+
+# Goal 
+
+Given a collection of datasets from GEO2R (stored as .txt files) convert them into a single data matrix of logFC values that can then be analyzed further (i.e. via clustering).
+
+# Setup
+
+## Libraries
+```{r}
+library(data.table)
+library(psych)
+```
+
+## Inputs
+
+Get a list of input files and read each as a data.frame.
+```{r}
+files <- list.files(pattern=".txt")
+df_list <- lapply(files, fread)
+```
+
+# Wrangling
+
+Collapse duplicated genes by taking median
+```{r}
+fc_list <- lapply(df_list, function(x) {
+    cols <- c("Gene.symbol", "logFC")
+    x[, cols, with=F]
+})
+fc_med <- lapply(fc_list, function(x) {
+    x[, .(logFC=median(logFC)), .(Gene.symbol)]
+})
+```
+
+
+Collect the files into a single data.frame, each time using the intersection of common genes.
+```{r}
+DF <- Reduce(function(x, y) {
+    merge(x, y,
+          by="Gene.symbol", no.dups=T)
+}, fc_med)
+# rename the columns
+setattr(DF, "names",
+        c("gene_symbol", paste("dataset", seq_along(files), sep="_")))
+```
+
+```{r}
+# Save
+fwrite(DF, "logFC_merged.txt", sep="\t")
+```
+
+```{r}
+# cast as a matrix for plotting
+M <- as.matrix(DF[, -1, with=F])
+rownames(M) <- DF[[1]]
+```
+
+```{r}
+pairs.panels(M, rug=F, pch=".", method="spearman")
+```
+
+

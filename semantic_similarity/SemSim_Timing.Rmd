@@ -1,0 +1,103 @@
+---
+title: "SemSim Timing"
+output: html_notebook
+---
+
+# Goal
+
+Establish some timing benchmarks for the different semantic similarity methods. The Wang method (default) seems quite slow, so I'd like to profile each of the methods and see if there is a faster alternative among those supported by the `GOSemSim` package.
+
+# Setup
+
+# Setup
+
+## Libraries
+```{r}
+library(AnnotationHub)
+library(GOSemSim)
+library(org.Hs.eg.db)
+library(cmapR)
+library(data.table)
+library(psych)
+# our own custom functions
+source("functions.R")
+```
+
+```{r}
+# inistialize a GOSemSimDATA object to contain the GO term to symbol mapping
+hsGO <- godata('org.Hs.eg.db', ont="MF", keytype = "SYMBOL")
+```
+
+## Inputs
+```{r}
+# read disease genes
+disease_gene_files <- list.files("disease_genes", pattern=".grp$", full.names=T)
+disease_genes <- lapply(disease_gene_files, function(x) {
+    # get raw content
+    genes <- parse_grp(x)
+    # strip whitespace
+    genes <- trimws(genes, which="both")
+    return(genes)
+    })
+names(disease_genes) <- gsub("\\..*$", "", basename(disease_gene_files))
+```
+
+```{r}
+# read drug target lists
+drug_target_files <- list.files("drug_targets", pattern=".txt$", full.names = T)
+drug_targets <- lapply(drug_target_files, function(x) {
+    df <- fread(x)
+    sp <- with(df, split(gene_symbol, drug_name))
+    return(sp)
+})
+names(drug_targets) <- gsub("\\..*$", "", basename(drug_target_files))
+```
+
+```{r}
+# save this as a .rds file that we can reuse in other notebooks
+inputs <- list(disease_genes = disease_genes,
+               drug_targets = drug_targets,
+               hsGO = hsGO)
+saveRDS(inputs, "inputs.rds", version=2) # for backwards compatibility
+```
+
+
+# Timing
+
+```{r}
+# define the different measure types
+measures <- c("Resnik", "Lin", "Rel", "Jiang", "Wang", "jaccard")
+```
+
+```{r}
+# profile each
+res_list <- list()
+timing <- sapply(measures, function(x) {
+    system.time({
+        foo <- disease_drug_sim(disease_genes$Commonly_expressed,
+                     drug_targets$Commonly_expressed,
+                     semData=hsGO,
+                     measure=x)
+        # save the results
+        res_list[[x]] <<- foo
+    })
+}, USE.NAMES = T)
+```
+
+Let's look at the timings
+```{r}
+barplot(timing, beside=T, legend.text=T, args.legend=list(x="topleft"),
+        ylab="seconds", main="SemSim measure timings")
+```
+Based on this, Wang appears to be much slower than the rest, by a factor of about 3.5. That's notable but given that computing the null with Wang was taking >6 days, and I'm not even sure of that because my laptop crashed before it finished, one of the other methods would still take >1.5 days. Jaccard index is really fast compared to other metrics, but are the results comparable?
+
+```{r}
+# wrap up results into matrix
+res_mat <- Reduce(cbind, res_list)
+colnames(res_mat) <- names(res_list)
+```
+
+```{r}
+pairs.panels(res_mat)
+```
+Interesting. The various semantic similarity metrics are all highly correlated with each other, but none is correlated with jaccard index. Suggests that we can't use jaccard as a surrogate. The Jiang method seems most correlated with Wang, but is much faster, so perhaps we should use that.

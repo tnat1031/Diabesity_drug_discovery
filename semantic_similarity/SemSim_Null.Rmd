@@ -1,0 +1,110 @@
+---
+title: "SemSim Null"
+output: html_notebook
+---
+
+# Goal 
+
+Generate a null distribution of semantic similarity values against which we can then compute a p-value for the true drug-disease similarities. This will be done using permuted gene lists.
+
+How to estimate siginficance? Could try random gene sets of same size as compound sets within a given tissue. Let's see how that plays out.
+
+# Inputs
+
+```{r}
+# use pre-existing
+inputs <- readRDS("inputs.rds")
+tissue_res <- readRDS("tissue_res_Jiang.rds")
+```
+
+# Test with one tissue type
+
+This is slow so we should make sure it's what we want to do.
+```{r}
+foo <- make_null_sets(inputs$drug_targets$Commonly_expressed)
+system.time(foo_res <- lapply(foo, function(x) {
+    disease_drug_sim(inputs$disease_genes$Commonly_expressed, x,
+                     semData=inputs$hsGO, measure="Jiang")
+}))
+# save this
+saveRDS(foo_res, "null_res_Commonly_expressed_Jiang.rds")
+```
+
+```{r}
+# wrap into a matrix
+foo_res_mat <- Reduce(cbind, foo_res)
+```
+
+```{r}
+# compute p-vals
+foo_cdf <- apply(foo_res_mat, 1, ecdf)
+foo_pval <- sapply(rownames(foo_res_mat), function(x) {
+    1 - foo_cdf[[x]](tissue_res$Commonly_expressed[[x]])
+})
+```
+
+# Repeat with all tissues
+
+And using more permutations. Make null sets with 1,000 permutations each. We'll see if we can actually compute that many similarities.
+```{r}
+# seems reasonable - let's do for all tissues at 1e3
+null_sets <- sapply(drug_targets, make_null_sets, nperm=1e3, USE.NAMES = T,
+                    simplify = F)
+# save these
+saveRDS(null_sets, "null_sets.rds", version=2) # for backward compatibility
+```
+
+Do this one tissue at a time and save the intermediate results so we can pick up where we left off if necessary.
+
+```{r}
+# let's run it on the first 100 permuations just to get something
+nperm <- 100
+null_res <- list()
+```
+
+```{r}
+completed_tissues <- c("Adipose_subcutaneous")
+```
+
+
+```{r}
+# compute the null scores within each tissue
+# note this takes quite some time to run
+for (x in setdiff(tissues, completed_tissues)) {
+    message(x)
+    dx_genes <- inputs$disease_genes[[x]]
+    this_res <- sapply(null_sets[[x]][1:nperm], function(ns) {
+        disease_drug_sim(dx_genes, ns, semData=inputs$hsGO, measure="Jiang")
+        # ok to simplify this - will give a matrix
+    }, USE.NAMES = T, simplify = T)
+    saveRDS(this_res, sprintf("null_res_%s_nperm_%d_Jiang.rds", x, nperm))
+    null_res[[x]] <- this_res
+}
+```
+
+```{r}
+# save the full result
+saveRDS(null_res, "null_res_all_tissues_nperm_100_Jiang.rds")
+```
+
+```{r}
+# compute p-values
+cdf_list <- sapply(null_res, function(x) {
+    apply(x, 1, ecdf)
+}, USE.NAMES = T)
+
+pval_list <- sapply(tissues, function(x) {
+    this_res <- tissue_res[[x]]
+    sapply(names(this_res), function(drug) {
+        this_sem_sim <- this_res[[drug]]
+        this_cdf <- cdf_list[[x]][[drug]]
+        this_cdf(this_sem_sim)
+    }, USE.NAMES = T)
+}, USE.NAMES = T)
+
+# save
+saveRDS(pval_list, "pval_lists_all_tissues_nperm_100_Jiang.rds")
+```
+
+
+One other idea would be to compute a null for various binned gene list sizes, instead of for every compound individually. Ideally we'd do this for every tissue as well, but a shortcut could be to just do it once globally to limit the number of computations.

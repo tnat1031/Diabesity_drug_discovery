@@ -1,0 +1,89 @@
+---
+title: "Semantic Similarity"
+output: html_notebook
+---
+
+# Overview
+
+The objective of this analysis is to compute the semantic similarity between tissue-specific lists of drug targets and disease genes. We'll do this using the R package [GOSemSim](https://bioconductor.org/packages/devel/bioc/vignettes/GOSemSim/inst/doc/GOSemSim.html#gene-semantic-similarity-measurement). And the corresponding paper [here.](https://academic.oup.com/bioinformatics/article/26/7/976/213143). Wang's similarity method, which I've chosen to use, is explained [here.](https://academic.oup.com/bioinformatics/article/23/10/1274/197095#1953560)
+
+# Setup
+
+## Libraries
+```{r}
+library(AnnotationHub)
+library(GOSemSim)
+library(data.table)
+library(cmapR)
+library(parallel)
+source("functions.R")
+```
+
+```{r}
+# make sure org.Hs.eg.db annotation package is installed, as GOSemSim needs
+# this to compute similarities
+if (!require(org.Hs.eg.db)) {
+    BiocManager::install("org.Hs.eg.db")
+    library(org.Hs.eg.db)
+}
+```
+
+## Ontology
+
+Restrict ontology to molecular functions. From the paper above:
+
+"The GO used in measurement can be restricted by assigning the corresponding parameter to 'BP' (biological process), 'MF' (molecular function) and 'CC' (cellular component)."
+
+```{r}
+# inistialize a GOSemSimDATA object to contain the GO term to symbol mapping
+hsGO <- godata('org.Hs.eg.db', ont="MF", keytype = "SYMBOL")
+```
+
+
+## Inputs
+
+```{r}
+# read from previously saved inputs object created in 'SemSim_Timing.Rmd'
+inputs <- readRDS("inputs.rds")
+```
+
+
+# Computation
+
+## Sanity check
+
+As a sanity check, let's compute the similarity between the target lists for all the drugs in a given tissue. We should observe that drugs with similar mechanism cluster together.
+```{r}
+simtest <- mclusterSim(inputs$drug_targets$Commonly_expressed,
+                       semData=hsGO, measure="Jiang")
+d <- as.dist(1 - simtest)
+hc <- hclust(d)
+plot(hc)
+```
+Ok, this looks good. The estradiols, glitazones, and heavy metal drugs all form their own clusters.
+
+## Drug to disease gene lists
+
+We'll compute the similarity between each drug list and each tissue gene list, and wrap up the results into a matrix. Note that this takes a while, so one may want to simply load the .rds file with the results if available.
+```{r}
+tissues <- names(inputs$disease_genes)
+tissue_res <- lapply(tissues, function(x) {
+    disease_list <- disease_genes[[x]]
+    drug_lists <- drug_targets[[x]]
+    disease_drug_sim(disease_list, drug_lists, semData=hsGO, measure="Jiang")
+})
+names(tissue_res) <- tissues
+```
+
+```{r}
+# save since this took a while
+saveRDS(tissue_res, "tissue_res_Jiang.rds")
+```
+
+
+
+
+
+
+
+
