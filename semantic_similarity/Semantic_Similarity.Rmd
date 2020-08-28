@@ -70,8 +70,8 @@ We'll compute the similarity between each drug list and each tissue gene list, a
 ```{r}
 tissues <- names(inputs$disease_genes)
 tissue_res <- lapply(tissues, function(x) {
-    disease_list <- disease_genes[[x]]
-    drug_lists <- drug_targets[[x]]
+    disease_list <- inputs$disease_genes[[x]]
+    drug_lists <- inputs$drug_targets[[x]]
     disease_drug_sim(disease_list, drug_lists, semData=hsGO, measure="Jiang")
 })
 names(tissue_res) <- tissues
