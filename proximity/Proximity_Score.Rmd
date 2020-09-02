@@ -1,0 +1,33 @@
+---
+title: "Proximity Score"
+output: html_notebook
+---
+
+# Goal
+
+Compute proximities between disease and drug gene lists, using the the interactome graph object. 
+
+# Setup
+
+## Libraries
+```{r}
+# library(data.table)
+library(igraph)
+# our own custom functions
+source("functions.R")
+```
+
+## Data
+```{r}
+# inputs from Generate_Interactome_Network.Rmd
+inputs <- readRDS("inputs.rds")
+```
+
+# Analysis
+
+For each diease gene list and each drug, compute the proximity score for each pair of genes. This will result in a matrix of disease genes x drug targets where each value is a proximity score.
+```{r}
+
+```
+
+
