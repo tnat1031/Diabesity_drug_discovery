@@ -37,7 +37,7 @@ Restrict ontology to molecular functions. From the paper above:
 "The GO used in measurement can be restricted by assigning the corresponding parameter to 'BP' (biological process), 'MF' (molecular function) and 'CC' (cellular component)."
 
 ```{r}
-# inistialize a GOSemSimDATA object to contain the GO term to symbol mapping
+# Initialize a GOSemSimDATA object to contain the GO term to symbol mapping
 hsGO <- godata('org.Hs.eg.db', ont="MF", keytype = "SYMBOL")
 ```
 
@@ -66,7 +66,7 @@ Ok, this looks good. The estradiols, glitazones, and heavy metal drugs all form 
 
 ## Drug to disease gene lists
 
-We'll compute the similarity between each drug list and each tissue gene list, and wrap up the results into a matrix. Note that this takes a while, so one may want to simply load the .rds file with the results if available.
+We'll compute the similarity between each drug list and each tissue gene list, and wrap up the results into a matrix. Note that this takes a while, so one may want to simply load the .rds file with the results if available. For Windows users, mc.cores = 1 can be used. 
 ```{r}
 tissues <- names(inputs$disease_genes)
 tissue_res <- lapply(tissues, function(x) {
@@ -92,11 +92,11 @@ tissue_tables <- sapply(tissues, function(x) {
     res <- tissue_res[[x]]
     pvals <- pval_list[[x]]
     idx1 <- match(names(res), names(pvals))
-    idx2 <- match(names(res), names(drug_targets[[x]]))
+    idx2 <- match(names(res), names(tissue_res_Jiang$drug_targets[[x]]))
     data.table(drug = names(res),
                # number of genes in the disease and drug lists
-               ngene_disease = length(disease_genes[[x]]),
-               ngene_drug = lengths(drug_targets[[x]][idx2]),
+               ngene_disease = length(tissue_res_Jiang$disease_genes[[x]]),
+               ngene_drug = lengths(tissue_res_Jiang$drug_targets[[x]][idx2]),
                semsim = res,
                pval = pvals[idx1])
 }, USE.NAMES = T, simplify = F)
