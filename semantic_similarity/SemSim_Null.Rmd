@@ -62,15 +62,12 @@ nperm <- 100
 null_res <- list()
 ```
 
-```{r}
-completed_tissues <- c("Adipose_subcutaneous")
-```
-
 
 ```{r}
 # compute the null scores within each tissue
 # note this takes quite some time to run
-for (x in setdiff(tissues, completed_tissues)) {
+tissues <- names(tissue_res)
+for (x in tissues) {
     message(x)
     dx_genes <- inputs$disease_genes[[x]]
     this_res <- sapply(null_sets[[x]][1:nperm], function(ns) {
