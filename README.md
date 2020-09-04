@@ -23,3 +23,15 @@ Generate a null distribution of semantic similarity values against which we can 
 
 Compute the semantic similarities between the drug and gene lists and perform some downstream analyses.
 
+## Proximity
+
+A brief description of each script/notebook.
+
+### functions.R
+
+Contains the underlying functions needed for the various analyses so that they can be shared across notebooks.
+
+### Generate_Networks.Rmd
+
+Wrangle the PPI and GCN background network files into graph objects that we can then compute on.
+
