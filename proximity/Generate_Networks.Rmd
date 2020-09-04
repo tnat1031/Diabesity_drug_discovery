@@ -1,0 +1,117 @@
+---
+title: "Generate Networks"
+output: html_notebook
+---
+
+# Goal
+
+Given the background PPI and gene co-expression networks, convert them to graph objects that we can use as background networks. We'll use the `igraph` package to convert these interactions into a network object that we can compute on.
+
+# Setup
+
+## Libraries
+```{r}
+library(data.table)
+library(igraph)
+# our own custom functions
+source("functions.R")
+```
+
+## Data
+```{r}
+# read the background network files
+# these are simply 2-column tables with each row representing an interaction
+# files have no header line
+files <- list.files("background_networks", pattern=".csv", full.names=T)
+network_dfs <- sapply(files, function(x) {
+    fread(x, header=F)
+}, USE.NAMES = T, simplify = F)
+# update the names
+names(network_dfs) <- gsub("background_networks/|\\.csv", "", names(network_dfs))
+```
+
+
+```{r}
+# inputs from semantic similarity analysis - we can reuse the gene lists here
+inputs <- readRDS("../semantic_similarity/inputs.rds")
+```
+
+# Convert to graph objects
+```{r}
+network_graphs <- sapply(network_dfs, function(x) {
+   graph_from_data_frame(x, directed=F)
+    }, USE.NAMES = T, simplify = F)
+# count the number of edges - should be equal to number of rows in input data.frames
+cbind(
+    unlist(lapply(network_dfs, nrow)),
+    unlist(lapply(network_graphs, function(x) length(E(x))))
+)
+```
+Ok that looks good. Let's save it.
+
+```{r}
+# save
+saveRDS(network_graphs, "background_networks.rds")
+```
+
+# Filter gene lists
+```{r}
+# filter each of the disease and drug gene lists so that it contains
+# only genes in the graph object
+# need to do this for each tissue separately
+inputs_filt <- inputs[c("drug_targets", "disease_genes")]
+universe <- names(V(g))
+inputs_filt$disease_genes <- filter_gene_lists(inputs_filt$disease_genes,
+                                               universe = universe)
+inputs_filt$drug_targets <- sapply(inputs_filt$drug_targets, function(x) {
+    filter_gene_lists(x, universe = universe)
+}, USE.NAMES = T)
+```
+
+
+
+
+# Reformat into nested list
+
+This will keep all our inputs in a single object and will simplify things for later analysis. We'll ignore the 'commonly expressed' genes in this analysis because we don't have a background network explicitly for them.
+
+```{r}
+# little helper function to organize the data
+hf <- function(tissues, networks=network_graphs,
+               disease_genes=inputs$disease_genes,
+               drug_targets=inputs$drug_targets,
+               patt="^PPI") {
+    # initial list to store the data
+    l <- sapply(tissues, function(x) {
+        idx <- grep(paste(patt, x, sep="_"), names(networks))
+        bn <- networks[[idx]]
+        dg <- disease_genes[[x]]
+        dt <- drug_targets[[x]]
+        # filter so that the gene lists are all subsets of the genes in the
+        # background network
+        universe <- names(V(bn))
+        dg <- intersect(dg, universe)
+        dt <- filter_gene_lists(dt, universe = universe)
+        list(
+            background_network = bn,
+            disease_genes = dg,
+            drug_targets = dt
+        )
+    }, USE.NAMES = T, simplify = F)
+    return(l)
+}
+```
+
+```{r}
+tissues <- setdiff(names(inputs$disease_genes), "Commonly_expressed")
+obj <- list(
+    PPI = hf(tissues, patt="^PPI"),
+    GCN = hf(tissues, patt="^GCN")
+)
+```
+
+```{r}
+# save
+saveRDS(obj, "inputs.rds")
+```
+
