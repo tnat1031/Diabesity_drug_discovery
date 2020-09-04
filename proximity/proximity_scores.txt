@@ -1,0 +1,1317 @@
+assoc_type	tissue	drug	nr	nc	mat_size	min_prox	mean_prox	med_prox	max_prox
+PPI	Adipose_subcutaneous	Acetylsalicylic acid	25	160	4000	1	3.4	3	7
+PPI	Adipose_subcutaneous	Acitretin	6	160	960	0	3.525	4	7
+PPI	Adipose_subcutaneous	Adapalene	8	160	1280	0	3.58515625	4	7
+PPI	Adipose_subcutaneous	Alclometasone			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Aldesleukin	5	160	800	0	3.57125	4	6
+PPI	Adipose_subcutaneous	Alfacalcidol	2	160	320	0	2.903125	3	5
+PPI	Adipose_subcutaneous	Alitretinoin	7	160	1120	0	3.68303571428571	4	7
+PPI	Adipose_subcutaneous	alpha-Linolenic acid	7	160	1120	0	3.94375	4	8
+PPI	Adipose_subcutaneous	Alprostadil	2	160	320	0	3.775	4	6
+PPI	Adipose_subcutaneous	Amcinonide	2	160	320	0	2.996875	3	5
+PPI	Adipose_subcutaneous	Aminoglutethimide			160	0	3.05625	3	5
+PPI	Adipose_subcutaneous	Amiodarone	12	160	1920	0	3.68958333333333	4	7
+PPI	Adipose_subcutaneous	Angiotensin II			160	2	3.24375	3	5
+PPI	Adipose_subcutaneous	Arsenic trioxide	12	160	1920	0	2.840625	3	6
+PPI	Adipose_subcutaneous	Asunaprevir	2	160	320	0	3.371875	3	6
+PPI	Adipose_subcutaneous	Atazanavir	6	160	960	0	3.83229166666667	4	7
+PPI	Adipose_subcutaneous	Atorvastatin	10	160	1600	0	3.714375	4	7
+PPI	Adipose_subcutaneous	Atosiban			160	0	3.65	4	5
+PPI	Adipose_subcutaneous	Azilsartan medoxomil			160	2	3.24375	3	5
+PPI	Adipose_subcutaneous	Balsalazide	4	160	640	0	3.4421875	3	6
+PPI	Adipose_subcutaneous	Baricitinib	5	160	800	0	3.08625	3	5
+PPI	Adipose_subcutaneous	Basiliximab	2	160	320	0	3.1625	3	5
+PPI	Adipose_subcutaneous	Beclomethasone dipropionate	2	160	320	0	2.715625	3	5
+PPI	Adipose_subcutaneous	Belinostat	12	160	1920	0	3.025	3	5
+PPI	Adipose_subcutaneous	Benzoic acid			160	0	3.74375	4	6
+PPI	Adipose_subcutaneous	Benzylpenicillin	2	160	320	0	3.58125	4	6
+PPI	Adipose_subcutaneous	Betamethasone	4	160	640	0	3.1734375	3	5
+PPI	Adipose_subcutaneous	Bexarotene	3	160	480	0	3.68125	4	6
+PPI	Adipose_subcutaneous	Bezafibrate	7	160	1120	0	3.52767857142857	4	7
+PPI	Adipose_subcutaneous	Bilastine			160	0	3.74375	4	6
+PPI	Adipose_subcutaneous	Binimetinib	4	160	640	0	3.3765625	3	6
+PPI	Adipose_subcutaneous	Budesonide	5	160	800	0	3.25125	3	5
+PPI	Adipose_subcutaneous	Bufexamac	3	160	480	2	3.57916666666667	4	6
+PPI	Adipose_subcutaneous	Canakinumab			160	0	3.03125	3	5
+PPI	Adipose_subcutaneous	Candesartan cilexetil	4	160	640	1	3.4515625	3	6
+PPI	Adipose_subcutaneous	Cannabidiol	16	160	2560	0	3.841015625	4	7
+PPI	Adipose_subcutaneous	Cholecalciferol	3	160	480	0	3.19583333333333	3	5
+PPI	Adipose_subcutaneous	Cholecystokinin	4	160	640	0	3.546875	4	6
+PPI	Adipose_subcutaneous	Ciclesonide			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Citric acid	7	160	1120	0	3.68928571428571	4	6
+PPI	Adipose_subcutaneous	Clobetasol propionate	4	160	640	0	3.65	4	7
+PPI	Adipose_subcutaneous	Clobetasone			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Clocortolone			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Conivaptan	2	160	320	0	3.325	3	5
+PPI	Adipose_subcutaneous	Conjugated estrogens	10	160	1600	0	3.60125	4	7
+PPI	Adipose_subcutaneous	Copper	95	160	15200	0	3.71960526315789	4	7
+PPI	Adipose_subcutaneous	Cortisone acetate			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Curcumin	5	160	800	0	3.325	3	6
+PPI	Adipose_subcutaneous	Danazol	5	160	800	0	2.9325	3	5
+PPI	Adipose_subcutaneous	Darolutamide	4	160	640	0	2.8828125	3	5
+PPI	Adipose_subcutaneous	Deflazacort			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Denileukin diftitox	3	160	480	0	3.34166666666667	3	5
+PPI	Adipose_subcutaneous	Desmopressin	3	160	480	0	3.73333333333333	4	6
+PPI	Adipose_subcutaneous	Desogestrel	4	160	640	0	3.0734375	3	5
+PPI	Adipose_subcutaneous	Desonide			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Desoximetasone			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Dexamethasone	11	160	1760	0	3.86647727272727	4	7
+PPI	Adipose_subcutaneous	Dexibuprofen	12	160	1920	0	3.65052083333333	4	7
+PPI	Adipose_subcutaneous	Dextromethorphan	13	160	2080	1	3.57259615384615	4	7
+PPI	Adipose_subcutaneous	Dienogest	2	160	320	0	2.55625	2	5
+PPI	Adipose_subcutaneous	Diethylstilbestrol	12	160	1920	0	3.584375	4	8
+PPI	Adipose_subcutaneous	Diflorasone			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Difluocortolone			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Difluprednate			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Digitoxin	4	160	640	0	3.334375	3	5
+PPI	Adipose_subcutaneous	Digoxin	3	160	480	0	3.30625	3	5
+PPI	Adipose_subcutaneous	Dinoprostone	3	160	480	0	3.80625	4	6
+PPI	Adipose_subcutaneous	Dipyridamole	3	160	480	0	3.83958333333333	4	6
+PPI	Adipose_subcutaneous	Doconexent	5	160	800	0	3.7675	4	7
+PPI	Adipose_subcutaneous	Donepezil	10	160	1600	0	3.49625	4	6
+PPI	Adipose_subcutaneous	Drospirenone	5	160	800	0	3.3125	3	7
+PPI	Adipose_subcutaneous	Dydrogesterone			160	0	2.70625	3	5
+PPI	Adipose_subcutaneous	Efalizumab	2	160	320	0	4.228125	5	7
+PPI	Adipose_subcutaneous	Enzacamene	4	160	640	0	2.7140625	3	5
+PPI	Adipose_subcutaneous	Eprosartan	2	160	320	2	3.334375	3	6
+PPI	Adipose_subcutaneous	Ergocalciferol	6	160	960	0	3.98645833333333	4	8
+PPI	Adipose_subcutaneous	Erlotinib	7	160	1120	0	3.58392857142857	4	6
+PPI	Adipose_subcutaneous	Estradiol acetate	10	160	1600	0	3.444375	4	7
+PPI	Adipose_subcutaneous	Estradiol benzoate	10	160	1600	0	3.444375	4	7
+PPI	Adipose_subcutaneous	Estradiol cypionate	10	160	1600	0	3.444375	4	7
+PPI	Adipose_subcutaneous	Estradiol dienanthate	10	160	1600	0	3.444375	4	7
+PPI	Adipose_subcutaneous	Estradiol valerate	10	160	1600	0	3.444375	4	7
+PPI	Adipose_subcutaneous	Estrone	7	160	1120	0	3.16160714285714	3	6
+PPI	Adipose_subcutaneous	Ethynodiol diacetate	2	160	320	0	2.528125	2	5
+PPI	Adipose_subcutaneous	Etodolac	4	160	640	0	3.521875	4	6
+PPI	Adipose_subcutaneous	Etonogestrel	4	160	640	0	3.0734375	3	5
+PPI	Adipose_subcutaneous	Fenofibric acid	4	160	640	0	3.4125	3	7
+PPI	Adipose_subcutaneous	Fenoprofen	5	160	800	0	3.5575	4	7
+PPI	Adipose_subcutaneous	Ferric cation	4	160	640	0	3.740625	4	5
+PPI	Adipose_subcutaneous	Ferric derisomaltose	2	160	320	0	3.3375	3	5
+PPI	Adipose_subcutaneous	Ferrous ascorbate	7	160	1120	0	3.67321428571429	4	6
+PPI	Adipose_subcutaneous	Ferrous fumarate	7	160	1120	0	3.67321428571429	4	6
+PPI	Adipose_subcutaneous	Ferrous gluconate	7	160	1120	0	3.67321428571429	4	6
+PPI	Adipose_subcutaneous	Ferrous glycine sulfate	7	160	1120	0	3.67321428571429	4	6
+PPI	Adipose_subcutaneous	Ferrous succinate	7	160	1120	0	3.67321428571429	4	6
+PPI	Adipose_subcutaneous	Ferrous sulfate anhydrous	4	160	640	0	3.8625	4	6
+PPI	Adipose_subcutaneous	Fexofenadine	6	160	960	0	3.88854166666667	4	7
+PPI	Adipose_subcutaneous	Fingolimod	5	160	800	0	3.49	4	7
+PPI	Adipose_subcutaneous	Fish oil	10	160	1600	0	3.565625	4	7
+PPI	Adipose_subcutaneous	Fludrocortisone	4	160	640	0	4.0328125	4	7
+PPI	Adipose_subcutaneous	Flufenamic acid	6	160	960	0	3.43958333333333	4	7
+PPI	Adipose_subcutaneous	Flumethasone			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Flunisolide			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Fluocinolone acetonide	5	160	800	0	3.30375	3	6
+PPI	Adipose_subcutaneous	Fluocinonide			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Fluorometholone			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Fluoxymesterone	4	160	640	0	2.7515625	3	5
+PPI	Adipose_subcutaneous	Flurandrenolide			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Fluticasone	6	160	960	0	3.528125	4	7
+PPI	Adipose_subcutaneous	Fluticasone furoate	5	160	800	0	3.43375	3	7
+PPI	Adipose_subcutaneous	Fluticasone propionate	6	160	960	0	3.528125	4	7
+PPI	Adipose_subcutaneous	Fluvastatin	5	160	800	0	3.4775	4	6
+PPI	Adipose_subcutaneous	Foreskin keratinocyte (neonatal)	10	160	1600	0	3.346875	3	6
+PPI	Adipose_subcutaneous	Fostamatinib	164	160	26240	0	3.76330030487805	4	8
+PPI	Adipose_subcutaneous	Gallium citrate Ga-67	3	160	480	0	3.56875	4	6
+PPI	Adipose_subcutaneous	Gallium nitrate	4	160	640	0	3.5890625	4	6
+PPI	Adipose_subcutaneous	Gemfibrozil	4	160	640	0	3.771875	4	7
+PPI	Adipose_subcutaneous	Gestrinone	5	160	800	0	2.7425	3	5
+PPI	Adipose_subcutaneous	Glipizide	2	160	320	0	3.078125	3	5
+PPI	Adipose_subcutaneous	Glutamic acid	21	160	3360	1	3.9625	4	7
+PPI	Adipose_subcutaneous	Glutathione	18	160	2880	2	4.03958333333333	4	7
+PPI	Adipose_subcutaneous	Glutethimide			160	0	3.05625	3	5
+PPI	Adipose_subcutaneous	Glyburide	9	160	1440	0	3.79930555555556	4	7
+PPI	Adipose_subcutaneous	Glycyrrhizic acid	6	160	960	1	3.53020833333333	4	7
+PPI	Adipose_subcutaneous	Homosalate	3	160	480	0	2.4875	2	5
+PPI	Adipose_subcutaneous	Human interferon beta	2	160	320	0	3.26875	3	5
+PPI	Adipose_subcutaneous	Hydrocortamate			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Hydrocortisone	6	160	960	0	3.625	4	7
+PPI	Adipose_subcutaneous	Hydrocortisone acetate	5	160	800	0	3.33125	3	5
+PPI	Adipose_subcutaneous	Hydrocortisone butyrate	5	160	800	0	3.33125	3	5
+PPI	Adipose_subcutaneous	Hydrocortisone cypionate	5	160	800	0	3.33125	3	5
+PPI	Adipose_subcutaneous	Hydrocortisone phosphate	5	160	800	0	3.33125	3	5
+PPI	Adipose_subcutaneous	Hydrocortisone probutate	5	160	800	0	3.33125	3	5
+PPI	Adipose_subcutaneous	Hydroxyprogesterone caproate			160	0	2.70625	3	5
+PPI	Adipose_subcutaneous	Ibuprofen	11	160	1760	0	3.54829545454545	4	7
+PPI	Adipose_subcutaneous	Icosapent	7	160	1120	0	3.74107142857143	4	8
+PPI	Adipose_subcutaneous	Iloprost	4	160	640	0	3.95625	4	6
+PPI	Adipose_subcutaneous	Indinavir	4	160	640	0	3.5953125	4	7
+PPI	Adipose_subcutaneous	Indomethacin	11	160	1760	0	3.78125	4	7
+PPI	Adipose_subcutaneous	Interferon alfa-2a, Recombinant			160	0	3.11875	3	5
+PPI	Adipose_subcutaneous	Interferon alfa-2b			160	0	3.11875	3	5
+PPI	Adipose_subcutaneous	Interferon alfa-n1			160	0	3.11875	3	5
+PPI	Adipose_subcutaneous	Interferon alfa-n3			160	0	3.11875	3	5
+PPI	Adipose_subcutaneous	Interferon alfacon-1			160	0	3.11875	3	5
+PPI	Adipose_subcutaneous	Interferon beta-1a			160	0	3.11875	3	5
+PPI	Adipose_subcutaneous	Interferon beta-1b			160	0	3.11875	3	5
+PPI	Adipose_subcutaneous	Irbesartan	6	160	960	1	3.5625	4	6
+PPI	Adipose_subcutaneous	Iron	7	160	1120	0	3.67321428571429	4	6
+PPI	Adipose_subcutaneous	Isotretinoin	3	160	480	0	3.69791666666667	4	7
+PPI	Adipose_subcutaneous	Itraconazole	2	160	320	0	3.371875	3	6
+PPI	Adipose_subcutaneous	Latanoprostene bunod			160	0	3.74375	4	6
+PPI	Adipose_subcutaneous	Leflunomide	2	160	320	0	4.21875	4	7
+PPI	Adipose_subcutaneous	Levonorgestrel	5	160	800	0	2.7425	3	5
+PPI	Adipose_subcutaneous	Levothyroxine	9	160	1440	0	3.675	4	7
+PPI	Adipose_subcutaneous	Lifitegrast	2	160	320	0	3.534375	3	6
+PPI	Adipose_subcutaneous	Lindane	3	160	480	0	2.93541666666667	3	6
+PPI	Adipose_subcutaneous	Lithium carbonate	2	160	320	0	3.484375	4	6
+PPI	Adipose_subcutaneous	Lithium citrate	2	160	320	0	3.484375	4	6
+PPI	Adipose_subcutaneous	Losartan	4	160	640	1	3.3765625	3	5
+PPI	Adipose_subcutaneous	Loteprednol etabonate			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Lovastatin	8	160	1280	0	3.39140625	3	6
+PPI	Adipose_subcutaneous	Lypressin	2	160	320	0	3.5375	4	6
+PPI	Adipose_subcutaneous	Medrogestone	3	160	480	0	3.31458333333333	3	5
+PPI	Adipose_subcutaneous	Medroxyprogesterone acetate	5	160	800	0	3.06375	3	5
+PPI	Adipose_subcutaneous	Medrysone	2	160	320	0	2.715625	3	5
+PPI	Adipose_subcutaneous	Megestrol acetate	3	160	480	0	2.7125	3	5
+PPI	Adipose_subcutaneous	Mesalazine	6	160	960	0	3.28229166666667	3	6
+PPI	Adipose_subcutaneous	Methylprednisolone	7	160	1120	0	3.62142857142857	4	7
+PPI	Adipose_subcutaneous	Mifepristone	7	160	1120	0	3.39642857142857	4	7
+PPI	Adipose_subcutaneous	Minocycline	17	160	2720	0	3.43860294117647	4	6
+PPI	Adipose_subcutaneous	Mitotane	5	160	800	0	2.85625	3	5
+PPI	Adipose_subcutaneous	Mometasone furoate	3	160	480	0	2.99375	3	5
+PPI	Adipose_subcutaneous	Montelukast	4	160	640	0	3.696875	4	6
+PPI	Adipose_subcutaneous	Muromonab	13	160	2080	0	3.87451923076923	4	7
+PPI	Adipose_subcutaneous	NADH	45	160	7200	0	4.02444444444444	4	9
+PPI	Adipose_subcutaneous	Nadroparin	3	160	480	0	3.15833333333333	3	6
+PPI	Adipose_subcutaneous	Nateglinide	4	160	640	0	3.6625	4	6
+PPI	Adipose_subcutaneous	Nefazodone	8	160	1280	0	3.94140625	4	7
+PPI	Adipose_subcutaneous	Nelfinavir	3	160	480	0	3.3875	3	6
+PPI	Adipose_subcutaneous	Niacin	3	160	480	0	4.3375	4	7
+PPI	Adipose_subcutaneous	Nicotinamide	3	160	480	0	3.48125	4	6
+PPI	Adipose_subcutaneous	Nintedanib	14	160	2240	0	3.41607142857143	4	6
+PPI	Adipose_subcutaneous	Niraparib	2	160	320	0	3.121875	3	5
+PPI	Adipose_subcutaneous	Norelgestromin	3	160	480	0	2.84375	3	5
+PPI	Adipose_subcutaneous	Norethisterone	6	160	960	0	2.96354166666667	3	5
+PPI	Adipose_subcutaneous	Norgestimate	7	160	1120	0	3.01785714285714	3	6
+PPI	Adipose_subcutaneous	Norgestrel	2	160	320	0	2.55625	2	5
+PPI	Adipose_subcutaneous	Nortriptyline	12	160	1920	1	3.93229166666667	4	7
+PPI	Adipose_subcutaneous	Novobiocin			160	0	3.74375	4	6
+PPI	Adipose_subcutaneous	Olaparib	3	160	480	0	3.08125	3	5
+PPI	Adipose_subcutaneous	Oleic Acid	7	160	1120	0	3.54732142857143	3	7
+PPI	Adipose_subcutaneous	Olmesartan	2	160	320	2	3.334375	3	6
+PPI	Adipose_subcutaneous	Omega-3 fatty acids	5	160	800	0	3.79	4	7
+PPI	Adipose_subcutaneous	Oxybenzone	4	160	640	0	2.7140625	3	5
+PPI	Adipose_subcutaneous	Panobinostat	11	160	1760	0	2.95056818181818	3	5
+PPI	Adipose_subcutaneous	Peginterferon alfa-2a			160	0	3.11875	3	5
+PPI	Adipose_subcutaneous	Peginterferon alfa-2b			160	0	3.11875	3	5
+PPI	Adipose_subcutaneous	Pexidartinib	7	160	1120	0	3.7375	4	6
+PPI	Adipose_subcutaneous	Pioglitazone	3	160	480	0	3.33333333333333	3	5
+PPI	Adipose_subcutaneous	Piroxicam	5	160	800	0	3.71125	4	6
+PPI	Adipose_subcutaneous	Pitavastatin	8	160	1280	0	3.67421875	4	6
+PPI	Adipose_subcutaneous	Ponatinib	16	160	2560	0	3.387109375	3	6
+PPI	Adipose_subcutaneous	Prasterone	12	160	1920	0	3.70989583333333	4	7
+PPI	Adipose_subcutaneous	Pravastatin	5	160	800	0	3.30875	3	6
+PPI	Adipose_subcutaneous	Prednicarbate			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Prednisolone	3	160	480	0	2.95	3	5
+PPI	Adipose_subcutaneous	Prednisolone acetate	3	160	480	0	2.95	3	5
+PPI	Adipose_subcutaneous	Prednisolone phosphate	6	160	960	0	3.55833333333333	4	7
+PPI	Adipose_subcutaneous	Prednisone	5	160	800	0	3.5575	4	7
+PPI	Adipose_subcutaneous	Procaine	7	160	1120	0	3.72946428571429	4	7
+PPI	Adipose_subcutaneous	Progesterone	12	160	1920	0	3.64895833333333	4	7
+PPI	Adipose_subcutaneous	Pseudoephedrine	17	160	2720	0	3.26066176470588	3	7
+PPI	Adipose_subcutaneous	Pyridoxal phosphate	14	160	2240	1	3.88080357142857	4	7
+PPI	Adipose_subcutaneous	Repaglinide	3	160	480	0	3.33333333333333	3	5
+PPI	Adipose_subcutaneous	Reserpine	3	160	480	0	3.38958333333333	3	6
+PPI	Adipose_subcutaneous	Rifampicin	9	160	1440	0	3.90416666666667	4	7
+PPI	Adipose_subcutaneous	Rifamycin	4	160	640	0	3.5015625	4	6
+PPI	Adipose_subcutaneous	Rilonacept	3	160	480	0	3.49791666666667	3	6
+PPI	Adipose_subcutaneous	Rimexolone			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Ritonavir	8	160	1280	0	3.77109375	4	7
+PPI	Adipose_subcutaneous	Romidepsin	6	160	960	0	2.99375	3	7
+PPI	Adipose_subcutaneous	Rosiglitazone	8	160	1280	0	3.51015625	4	7
+PPI	Adipose_subcutaneous	Rosuvastatin	5	160	800	0	3.555	4	6
+PPI	Adipose_subcutaneous	Rubidium Rb-82	3	160	480	0	3.88541666666667	4	7
+PPI	Adipose_subcutaneous	Rucaparib	4	160	640	0	3.271875	3	5
+PPI	Adipose_subcutaneous	Salicylic acid	5	160	800	0	3.7425	4	6
+PPI	Adipose_subcutaneous	Saquinavir	7	160	1120	0	3.77410714285714	4	7
+PPI	Adipose_subcutaneous	Segesterone acetate	3	160	480	0	2.51458333333333	2	5
+PPI	Adipose_subcutaneous	Sertraline	5	160	800	1	3.73875	4	7
+PPI	Adipose_subcutaneous	Simeprevir	4	160	640	0	3.396875	3	6
+PPI	Adipose_subcutaneous	Simvastatin	7	160	1120	0	3.3875	3	6
+PPI	Adipose_subcutaneous	Spironolactone	16	160	2560	0	3.918359375	4	8
+PPI	Adipose_subcutaneous	Sulfasalazine	11	160	1760	0	3.59375	4	7
+PPI	Adipose_subcutaneous	Tacrolimus	4	160	640	0	3.734375	4	6
+PPI	Adipose_subcutaneous	Talazoparib	3	160	480	0	3.08125	3	5
+PPI	Adipose_subcutaneous	Taurocholic acid	6	160	960	0	3.90520833333333	4	7
+PPI	Adipose_subcutaneous	Tazarotene	4	160	640	0	3.59375	4	7
+PPI	Adipose_subcutaneous	Telaprevir	4	160	640	0	3.734375	4	6
+PPI	Adipose_subcutaneous	Telmisartan	4	160	640	0	3.1015625	3	6
+PPI	Adipose_subcutaneous	Terlipressin			160	0	3.65	4	5
+PPI	Adipose_subcutaneous	Testosterone	7	160	1120	0	3.44017857142857	3	7
+PPI	Adipose_subcutaneous	Testosterone cypionate	8	160	1280	0	3.38515625	3	7
+PPI	Adipose_subcutaneous	Testosterone enanthate	8	160	1280	0	3.38515625	3	7
+PPI	Adipose_subcutaneous	Testosterone undecanoate	8	160	1280	0	3.38515625	3	7
+PPI	Adipose_subcutaneous	Tetracycline	3	160	480	0	3.62916666666667	4	6
+PPI	Adipose_subcutaneous	Tetraferric tricitrate decahydrate	4	160	640	0	3.740625	4	5
+PPI	Adipose_subcutaneous	Theophylline	5	160	800	0	3.4075	4	7
+PPI	Adipose_subcutaneous	Tipranavir	2	160	320	0	3.371875	3	6
+PPI	Adipose_subcutaneous	Tixocortol	2	160	320	0	2.471875	2	5
+PPI	Adipose_subcutaneous	Tolbutamide	5	160	800	0	3.79375	4	7
+PPI	Adipose_subcutaneous	Tolvaptan	2	160	320	0	3.325	3	5
+PPI	Adipose_subcutaneous	Tretinoin	15	160	2400	0	3.82166666666667	4	7
+PPI	Adipose_subcutaneous	Triamcinolone	3	160	480	0	3.22708333333333	3	5
+PPI	Adipose_subcutaneous	Triclosan	3	160	480	0	2.96458333333333	3	6
+PPI	Adipose_subcutaneous	Trifarotene	4	160	640	0	3.59375	4	7
+PPI	Adipose_subcutaneous	Troglitazone	7	160	1120	0	3.81160714285714	4	8
+PPI	Adipose_subcutaneous	Ulipristal	5	160	800	0	3.1475	3	6
+PPI	Adipose_subcutaneous	Ulobetasol			160	0	2.43125	2	5
+PPI	Adipose_subcutaneous	Valproic acid	10	160	1600	0	3.413125	4	7
+PPI	Adipose_subcutaneous	Valsartan	2	160	320	2	3.334375	3	6
+PPI	Adipose_subcutaneous	Vasopressin	2	160	320	0	3.5375	4	6
+PPI	Adipose_subcutaneous	Velpatasvir	3	160	480	0	3.52916666666667	4	6
+PPI	Adipose_subcutaneous	Vorinostat	5	160	800	0	2.75	3	5
+PPI	Adipose_subcutaneous	Zanubrutinib	14	160	2240	0	3.26026785714286	3	6
+PPI	Adipose_subcutaneous	Zinc	67	160	10720	0	3.67938432835821	4	8
+PPI	Adipose_subcutaneous	Zinc acetate	68	160	10880	0	3.69954044117647	4	8
+PPI	Adipose_subcutaneous	Zinc chloride	56	160	8960	0	3.64720982142857	4	8
+PPI	Adipose_visceral	Acetylsalicylic acid	26	27	702	0	3.54273504273504	4	7
+PPI	Adipose_visceral	Adenosine phosphate	12	27	324	0	3.28703703703704	4	5
+PPI	Adipose_visceral	alpha-Tocopherol succinate	9	27	243	1	3.73251028806584	4	5
+PPI	Adipose_visceral	Amiodarone	14	27	378	0	4	4	6
+PPI	Adipose_visceral	Amlodipine	4	27	108	0	3.77777777777778	4	5
+PPI	Adipose_visceral	Asparagine	2	27	54	0	3.55555555555556	4	5
+PPI	Adipose_visceral	Avanafil			27	3	4.44444444444444	5	5
+PPI	Adipose_visceral	Bioallethrin	5	27	135	0	4.42222222222222	4	6
+PPI	Adipose_visceral	Bosutinib	9	27	243	1	3.61316872427984	4	5
+PPI	Adipose_visceral	Butamben	7	27	189	0	4.26984126984127	4	6
+PPI	Adipose_visceral	Caffeine	14	27	378	2	4.17460317460318	4	7
+PPI	Adipose_visceral	Calcium citrate	17	27	459	0	3.76252723311547	4	6
+PPI	Adipose_visceral	Calcium Phosphate	18	27	486	0	3.81893004115226	4	6
+PPI	Adipose_visceral	Calcium phosphate dihydrate	18	27	486	0	3.81893004115226	4	6
+PPI	Adipose_visceral	Cinnarizine	3	27	81	0	4.18518518518519	4	6
+PPI	Adipose_visceral	Clevidipine	4	27	108	0	4.7037037037037	5	7
+PPI	Adipose_visceral	Diltiazem	7	27	189	0	4.15873015873016	4	6
+PPI	Adipose_visceral	Dipyridamole	3	27	81	2	4.24691358024691	4	6
+PPI	Adipose_visceral	Dronedarone	12	27	324	0	4.10802469135802	4	6
+PPI	Adipose_visceral	Drotaverine			27	0	3.25925925925926	3	4
+PPI	Adipose_visceral	Enflurane	17	27	459	0	4.18300653594771	4	7
+PPI	Adipose_visceral	Ergocalciferol	5	27	135	0	4.05925925925926	4	6
+PPI	Adipose_visceral	Ethanol	12	27	324	0	4.41049382716049	4	7
+PPI	Adipose_visceral	Felodipine	6	27	162	0	3.92592592592593	4	6
+PPI	Adipose_visceral	Fish oil	10	27	270	0	3.54074074074074	4	5
+PPI	Adipose_visceral	Fostamatinib	170	27	4590	0	3.93050108932462	4	9
+PPI	Adipose_visceral	Glutamic acid	19	27	513	0	3.99025341130604	4	6
+PPI	Adipose_visceral	Ibutilide	2	27	54	0	3.64814814814815	4	5
+PPI	Adipose_visceral	Isavuconazole	8	27	216	0	4.01851851851852	4	6
+PPI	Adipose_visceral	Isradipine	2	27	54	0	3.85185185185185	4	5
+PPI	Adipose_visceral	L-Glutamine	10	27	270	0	3.58518518518519	4	5
+PPI	Adipose_visceral	Lacidipine	5	27	135	0	4.36296296296296	4	6
+PPI	Adipose_visceral	Levamlodipine	6	27	162	0	3.7283950617284	4	5
+PPI	Adipose_visceral	Levomenthol	4	27	108	0	4.36111111111111	4	6
+PPI	Adipose_visceral	Magnesium sulfate			27	0	3.25925925925926	3	4
+PPI	Adipose_visceral	Manidipine	4	27	108	0	4.58333333333333	5	6
+PPI	Adipose_visceral	Molsidomine			27	3	4.51851851851852	4	6
+PPI	Adipose_visceral	Nicardipine	8	27	216	0	4.25462962962963	4	7
+PPI	Adipose_visceral	Nifedipine	12	27	324	0	4.15123456790123	4	7
+PPI	Adipose_visceral	Nilvadipine	5	27	135	0	4.51851851851852	4	7
+PPI	Adipose_visceral	Nimodipine	4	27	108	0	4.24074074074074	4	6
+PPI	Adipose_visceral	Nisoldipine	3	27	81	0	3.77777777777778	4	5
+PPI	Adipose_visceral	Nitrendipine	3	27	81	0	3.77777777777778	4	5
+PPI	Adipose_visceral	Pentoxifylline	2	27	54	3	4.68518518518519	5	6
+PPI	Adipose_visceral	Phenformin			27	0	3.03703703703704	3	4
+PPI	Adipose_visceral	Phenytoin	15	27	405	0	4.09382716049383	4	7
+PPI	Adipose_visceral	Phosphatidyl serine			27	3	4.22222222222222	4	5
+PPI	Adipose_visceral	Promethazine	15	27	405	2	4.10864197530864	4	6
+PPI	Adipose_visceral	Propiverine	2	27	54	0	3.85185185185185	4	5
+PPI	Adipose_visceral	Pseudoephedrine	18	27	486	0	3.65843621399177	4	6
+PPI	Adipose_visceral	Ranolazine	9	27	243	0	4.2880658436214	4	6
+PPI	Adipose_visceral	Sildenafil	4	27	108	2	4.7962962962963	5	7
+PPI	Adipose_visceral	Spironolactone	14	27	378	0	4.06613756613757	4	7
+PPI	Adipose_visceral	Tadalafil			27	3	4.44444444444444	5	5
+PPI	Adipose_visceral	Theophylline	6	27	162	2	4.38888888888889	4	7
+PPI	Adipose_visceral	Topiramate	14	27	378	0	3.5952380952381	4	6
+PPI	Adipose_visceral	Trimebutine	6	27	162	0	4.4320987654321	4	6
+PPI	Adipose_visceral	Udenafil			27	3	4.44444444444444	5	5
+PPI	Adipose_visceral	Vardenafil	2	27	54	2	4.03703703703704	4	5
+PPI	Adipose_visceral	Verapamil	15	27	405	0	4.4320987654321	4	7
+PPI	Adipose_visceral	Zinc	72	27	1944	1	3.66923868312757	4	6
+PPI	Adipose_visceral	Zinc acetate	73	27	1971	1	3.6935565702689	4	6
+PPI	Adipose_visceral	Zinc chloride	60	27	1620	1	3.69506172839506	4	6
+PPI	Liver	Abemaciclib	7	61	427	0	3.91100702576112	4	7
+PPI	Liver	Abiraterone	8	61	488	0	4.4733606557377	4	8
+PPI	Liver	Acalabrutinib	4	61	244	0	4.01229508196721	4	7
+PPI	Liver	Acenocoumarol	6	61	366	0	4.35245901639344	4	8
+PPI	Liver	Adenosine phosphate	12	61	732	0	3.9207650273224	4	7
+PPI	Liver	Aflibercept	2	61	122	0	3.51639344262295	3.5	7
+PPI	Liver	Ajmaline			61	0	4.55737704918033	5	7
+PPI	Liver	Alfentanil	5	61	305	0	4.11475409836066	4	7
+PPI	Liver	Alprazolam	3	61	183	0	4.20765027322404	4	7
+PPI	Liver	Alteplase	4	61	244	0	4.02868852459016	4	7
+PPI	Liver	Amitriptyline	16	61	976	0	4.32479508196721	4	9
+PPI	Liver	Amoxapine	8	61	488	0	4.34426229508197	4	8
+PPI	Liver	Amsacrine	5	61	305	0	4.01639344262295	4	7
+PPI	Liver	Ancrod			61	0	4.26229508196721	4	7
+PPI	Liver	Anistreplase	3	61	183	0	4.14754098360656	4	7
+PPI	Liver	Anti-inhibitor coagulant complex	8	61	488	0	4.27868852459016	4	8
+PPI	Liver	Antihemophilic factor, human recombinant	8	61	488	0	3.77459016393443	4	7
+PPI	Liver	Argatroban	4	61	244	0	4.27049180327869	4	7
+PPI	Liver	Ascorbic acid	6	61	366	0	3.90710382513661	4	7
+PPI	Liver	Asenapine	8	61	488	0	4.25614754098361	4	8
+PPI	Liver	Atazanavir	7	61	427	0	4.06791569086651	4	7
+PPI	Liver	Atomoxetine	11	61	671	0	4.13412816691505	4	8
+PPI	Liver	Belinostat	12	61	732	0	3.44262295081967	3	7
+PPI	Liver	Bevacizumab	8	61	488	0	3.8422131147541	4	7
+PPI	Liver	Bosutinib	9	61	549	0	3.60655737704918	4	7
+PPI	Liver	Brolucizumab			61	0	3.01639344262295	3	6
+PPI	Liver	Bupropion	4	61	244	0	4.52868852459016	4	8
+PPI	Liver	Buspirone	5	61	305	0	4.18360655737705	4	7
+PPI	Liver	Butabarbital	7	61	427	0	4.0632318501171	4	7
+PPI	Liver	Butamben	7	61	427	0	4.26229508196721	4	8
+PPI	Liver	Calcium citrate	17	61	1037	0	3.8466730954677	4	8
+PPI	Liver	Calcium Phosphate	18	61	1098	0	3.88979963570128	4	8
+PPI	Liver	Calcium phosphate dihydrate	18	61	1098	0	3.88979963570128	4	8
+PPI	Liver	Canagliflozin	4	61	244	0	4.21311475409836	4	7
+PPI	Liver	Carboxymethylcellulose			61	0	3.73770491803279	4	6
+PPI	Liver	Carvedilol	16	61	976	0	3.90368852459016	4	8
+PPI	Liver	Celecoxib	6	61	366	0	4.04371584699454	4	7
+PPI	Liver	Chloroquine	8	61	488	0	3.95901639344262	4	7
+PPI	Liver	Chlorpromazine	11	61	671	0	4.40834575260805	4	8
+PPI	Liver	Chondroitin sulfate	3	61	183	0	4.31147540983607	4	9
+PPI	Liver	Clindamycin	3	61	183	0	4.2896174863388	4	7
+PPI	Liver	Cocaine	6	61	366	0	4.07377049180328	4	7
+PPI	Liver	Copper	100	61	6100	0	3.79590163934426	4	9
+PPI	Liver	D-glucose	6	61	366	0	3.80327868852459	4	7
+PPI	Liver	Dalteparin	2	61	122	0	3.89344262295082	4	7
+PPI	Liver	Darunavir	4	61	244	0	4.11065573770492	4	7
+PPI	Liver	Dasatinib	20	61	1220	0	3.74672131147541	4	7
+PPI	Liver	Delamanid	3	61	183	0	4.20765027322404	4	7
+PPI	Liver	Desipramine	10	61	610	0	4.25081967213115	4	8
+PPI	Liver	Dextrose, unspecified form	5	61	305	0	3.84918032786885	4	7
+PPI	Liver	Dichloroacetic acid	2	61	122	0	4.18032786885246	4	7
+PPI	Liver	Diltiazem	7	61	427	0	4.15925058548009	4	8
+PPI	Liver	Dipyridamole	3	61	183	0	4.04918032786885	4	7
+PPI	Liver	Disopyramide	5	61	305	0	4.27213114754098	4	7
+PPI	Liver	Doxepin	11	61	671	0	4.29210134128167	4	8
+PPI	Liver	Drotrecogin alfa	6	61	366	0	4.50273224043716	4	8
+PPI	Liver	Duloxetine	6	61	366	0	3.94262295081967	4	7
+PPI	Liver	Dutasteride	2	61	122	0	4.0655737704918	4	7
+PPI	Liver	Erlotinib	8	61	488	0	3.83196721311475	4	7
+PPI	Liver	Estradiol	11	61	671	0	3.83308494783905	4	8
+PPI	Liver	Estradiol acetate	12	61	732	0	3.8879781420765	4	8
+PPI	Liver	Estradiol benzoate	12	61	732	0	3.8879781420765	4	8
+PPI	Liver	Estradiol cypionate	12	61	732	0	3.8879781420765	4	8
+PPI	Liver	Estradiol dienanthate	12	61	732	0	3.8879781420765	4	8
+PPI	Liver	Estradiol valerate	12	61	732	0	3.8879781420765	4	8
+PPI	Liver	Etomidate			61	0	3.73770491803279	4	6
+PPI	Liver	Favipiravir	6	61	366	0	4.41530054644809	4	8
+PPI	Liver	Fentanyl	6	61	366	0	4.11748633879781	4	7
+PPI	Liver	Ferric cation	4	61	244	0	3.66803278688525	4	6
+PPI	Liver	Fexofenadine	6	61	366	0	4.1448087431694	4	8
+PPI	Liver	Flecainide	5	61	305	0	3.99016393442623	4	7
+PPI	Liver	Fludeoxyglucose (18F)	4	61	244	0	3.74180327868852	4	7
+PPI	Liver	Fluoxetine	8	61	488	0	4.19467213114754	4	8
+PPI	Liver	Foreskin keratinocyte (neonatal)	10	61	610	0	3.83606557377049	4	8
+PPI	Liver	Fostamatinib	170	61	10370	0	4.0274831243973	4	9
+PPI	Liver	Gefitinib	6	61	366	0	4.09562841530055	4	8
+PPI	Liver	Gliclazide	4	61	244	0	3.91803278688525	4	8
+PPI	Liver	Glutamic acid	19	61	1159	1	4.00258843830889	4	7
+PPI	Liver	Grazoprevir	4	61	244	0	4.11065573770492	4	7
+PPI	Liver	Human thrombin	6	61	366	0	4.22404371584699	4	8
+PPI	Liver	Hydroxychloroquine	6	61	366	0	4.06830601092896	4	7
+PPI	Liver	Ibrutinib	4	61	244	0	4.01229508196721	4	7
+PPI	Liver	Imatinib	16	61	976	0	4.12602459016393	4	8
+PPI	Liver	Imipramine	16	61	976	0	4.32172131147541	4	8
+PPI	Liver	Ipratropium	2	61	122	0	4.0655737704918	4	7
+PPI	Liver	Irbesartan	7	61	427	0	3.89227166276347	4	7
+PPI	Liver	Istradefylline	7	61	427	0	4.13817330210773	4	7
+PPI	Liver	Ivacaftor	5	61	305	0	3.97704918032787	4	7
+PPI	Liver	L-Glutamine	10	61	610	1	3.80983606557377	4	7
+PPI	Liver	Labetalol	6	61	366	0	4.22677595628415	4	8
+PPI	Liver	Lacidipine	5	61	305	0	4.37704918032787	4	8
+PPI	Liver	Lidocaine	5	61	305	0	3.86885245901639	4	7
+PPI	Liver	Lonoctocog alfa	8	61	488	0	3.77459016393443	4	7
+PPI	Liver	Lopinavir	5	61	305	0	4.35737704918033	4	8
+PPI	Liver	Maprotiline	4	61	244	0	4.2827868852459	4	7
+PPI	Liver	Melatonin	7	61	427	0	4.03981264637002	4	8
+PPI	Liver	Meperidine	13	61	793	0	4.13871374527112	4	8
+PPI	Liver	Methadone	13	61	793	0	4.0718789407314	4	8
+PPI	Liver	Metoclopramide	3	61	183	0	4.2896174863388	4	7
+PPI	Liver	Minocycline	17	61	1037	0	3.77917068466731	4	7
+PPI	Liver	Mirabegron	5	61	305	0	4.27213114754098	4	7
+PPI	Liver	Moroctocog alfa	8	61	488	0	3.77459016393443	4	7
+PPI	Liver	Nadolol	5	61	305	0	4	4	7
+PPI	Liver	Nateglinide	6	61	366	0	4.0327868852459	4	7
+PPI	Liver	Neratinib	5	61	305	0	3.84590163934426	4	7
+PPI	Liver	Nicotinamide	5	61	305	0	4.27868852459016	4	8
+PPI	Liver	Nifedipine	12	61	732	0	4.15710382513661	4	8
+PPI	Liver	Nintedanib	14	61	854	0	3.87353629976581	4	8
+PPI	Liver	Niraparib	2	61	122	0	3.4016393442623	4	5
+PPI	Liver	Nomifensine	4	61	244	0	4.0655737704918	4	7
+PPI	Liver	Nortriptyline	14	61	854	0	4.28220140515223	4	8
+PPI	Liver	Olanzapine	11	61	671	0	4.36512667660209	4	8
+PPI	Liver	Olaparib	4	61	244	0	3.77868852459016	4	6
+PPI	Liver	Oxybutynin	4	61	244	0	4.07786885245902	4	7
+PPI	Liver	Oxycodone	5	61	305	0	4.17704918032787	4	7
+PPI	Liver	Panobinostat	12	61	732	0	3.50956284153006	4	7
+PPI	Liver	Patisiran	2	61	122	0	4.0655737704918	4	7
+PPI	Liver	Penbutolol	3	61	183	0	3.98907103825137	4	7
+PPI	Liver	Pexidartinib	7	61	427	0	3.97892271662764	4	7
+PPI	Liver	Phenprocoumon	5	61	305	0	4.12786885245902	4	7
+PPI	Liver	Pidolic acid	3	61	183	0	4.55191256830601	5	8
+PPI	Liver	Pitavastatin	8	61	488	0	3.93852459016393	4	7
+PPI	Liver	Pitolisant	5	61	305	0	4.64262295081967	5	9
+PPI	Liver	Ponatinib	16	61	976	0	3.79200819672131	4	8
+PPI	Liver	Prazosin	4	61	244	0	4.30327868852459	4	7
+PPI	Liver	Progesterone	14	61	854	0	4.09250585480094	4	8
+PPI	Liver	Propranolol	8	61	488	0	4.26434426229508	4	8
+PPI	Liver	Prothrombin	5	61	305	0	3.95081967213115	4	7
+PPI	Liver	Pyridoxine	2	61	122	2	3.78688524590164	4	7
+PPI	Liver	Quinidine	8	61	488	0	4.39139344262295	4	8
+PPI	Liver	Raloxifene	10	61	610	0	4.07540983606557	4	8
+PPI	Liver	Ranibizumab			61	0	3.01639344262295	3	6
+PPI	Liver	Ranolazine	9	61	549	0	4.19125683060109	4	7
+PPI	Liver	Reteplase	3	61	183	0	4.14754098360656	4	7
+PPI	Liver	Rifampicin	12	61	732	0	4.39071038251366	4	8
+PPI	Liver	Riociguat	5	61	305	0	4.10163934426229	4	7
+PPI	Liver	Risperidone	7	61	427	0	4.33489461358314	4	8
+PPI	Liver	Ritonavir	10	61	610	0	4.17704918032787	4	8
+PPI	Liver	Rucaparib	6	61	366	0	4.02459016393443	4	8
+PPI	Liver	Salmeterol	7	61	427	0	4.09133489461358	4	7
+PPI	Liver	Saquinavir	8	61	488	0	4.05737704918033	4	7
+PPI	Liver	Solifenacin	2	61	122	0	4.52459016393443	5	7
+PPI	Liver	Spironolactone	14	61	854	0	4.06088992974239	4	8
+PPI	Liver	Sucralfate	3	61	183	0	4.50273224043716	4	8
+PPI	Liver	Tacrolimus	5	61	305	0	4.23934426229508	4	7
+PPI	Liver	Talazoparib	3	61	183	0	3.54098360655738	4	6
+PPI	Liver	Tamsulosin	3	61	183	0	4.50819672131148	5	7
+PPI	Liver	Telaprevir	5	61	305	0	4.04262295081967	4	7
+PPI	Liver	Tenecteplase	10	61	610	0	3.68360655737705	4	7
+PPI	Liver	Terbinafine	6	61	366	0	4.28688524590164	4	8
+PPI	Liver	Tetraferric tricitrate decahydrate	4	61	244	0	3.66803278688525	4	6
+PPI	Liver	Thalidomide	8	61	488	0	4.18647540983607	4	8
+PPI	Liver	Theophylline	6	61	366	0	4.33606557377049	4	8
+PPI	Liver	Thrombin	6	61	366	0	4.22404371584699	4	8
+PPI	Liver	Thrombin alfa	4	61	244	0	4.43852459016393	4	8
+PPI	Liver	Troglitazone	10	61	610	0	3.95081967213115	4	8
+PPI	Liver	Tromethamine	2	61	122	0	4	4	7
+PPI	Liver	Ulipristal	6	61	366	0	3.72131147540984	4	7
+PPI	Liver	Urokinase	6	61	366	0	3.96448087431694	4	7
+PPI	Liver	Valproic acid	10	61	610	0	3.9	4	8
+PPI	Liver	Vancomycin	2	61	122	0	4.0655737704918	4	7
+PPI	Liver	Vandetanib	10	61	610	0	3.8344262295082	4	7
+PPI	Liver	Vemurafenib	7	61	427	0	4.15456674473068	4	7
+PPI	Liver	Verapamil	15	61	915	0	4.44371584699454	4	8
+PPI	Liver	Vinflunine	5	61	305	0	3.95081967213115	4	7
+PPI	Liver	Vismodegib	6	61	366	0	4.24590163934426	4	8
+PPI	Liver	Warfarin	8	61	488	0	4.20491803278689	4	8
+PPI	Liver	Zinc	72	61	4392	0	3.63205828779599	4	8
+PPI	Liver	Zinc acetate	73	61	4453	0	3.65079721536043	4	8
+PPI	Liver	Zinc chloride	60	61	3660	0	3.64836065573771	4	8
+PPI	Liver	Ziprasidone	8	61	488	0	4.43032786885246	4	8
+PPI	Skeletal_muscle	Abciximab	3	268	804	0	3.26119402985075	3	5
+PPI	Skeletal_muscle	Abemaciclib	6	268	1608	0	3.37686567164179	3	5
+PPI	Skeletal_muscle	Acalabrutinib	3	268	804	0	3.21641791044776	3	5
+PPI	Skeletal_muscle	Acebutolol	3	268	804	0	3.21641791044776	3	5
+PPI	Skeletal_muscle	Acetazolamide	4	268	1072	0	3.80503731343284	4	6
+PPI	Skeletal_muscle	Acetylcysteine	4	268	1072	0	3.42723880597015	3	5
+PPI	Skeletal_muscle	Acetylsalicylic acid	24	268	6432	0	3.25544154228856	3	7
+PPI	Skeletal_muscle	Acyclovir	9	268	2412	0	3.37271973466003	3	6
+PPI	Skeletal_muscle	Adalimumab			268	0	2.98134328358209	3	5
+PPI	Skeletal_muscle	Adenosine phosphate	12	268	3216	0	3.25279850746269	3	5
+PPI	Skeletal_muscle	Afatinib	4	268	1072	0	3.10541044776119	3	5
+PPI	Skeletal_muscle	Alemtuzumab	5	268	1340	0	3.60746268656716	4	7
+PPI	Skeletal_muscle	alpha-Linolenic acid	7	268	1876	0	3.82569296375267	4	6
+PPI	Skeletal_muscle	alpha-Tocopherol succinate	9	268	2412	0	3.28524046434494	3	5
+PPI	Skeletal_muscle	Aluminium	4	268	1072	0	3.05876865671642	3	5
+PPI	Skeletal_muscle	Aluminium phosphate	4	268	1072	0	3.05876865671642	3	5
+PPI	Skeletal_muscle	Aluminum acetate	4	268	1072	0	3.05876865671642	3	5
+PPI	Skeletal_muscle	Aminosalicylic acid	3	268	804	0	3.35820895522388	3	6
+PPI	Skeletal_muscle	Amiodarone	14	268	3752	0	3.57329424307036	4	7
+PPI	Skeletal_muscle	Amphetamine	7	268	1876	0	3.44296375266525	4	5
+PPI	Skeletal_muscle	Amrinone	3	268	804	0	3.12810945273632	3	5
+PPI	Skeletal_muscle	Anthralin	2	268	536	0	3.47014925373134	4	5
+PPI	Skeletal_muscle	Antihemophilic factor, human recombinant	6	268	1608	0	3.31654228855721	3	6
+PPI	Skeletal_muscle	Arbutamine	3	268	804	0	3.09203980099502	3	5
+PPI	Skeletal_muscle	Arformoterol	2	268	536	0	3.94776119402985	4	7
+PPI	Skeletal_muscle	Aripiprazole	18	268	4824	0	3.65961857379768	4	6
+PPI	Skeletal_muscle	Aripiprazole lauroxil	9	268	2412	0	3.6334991708126	4	6
+PPI	Skeletal_muscle	Arsenic trioxide	13	268	3484	0	3.05166475315729	3	5
+PPI	Skeletal_muscle	Arzoxifene	2	268	536	0	2.56529850746269	2	4
+PPI	Skeletal_muscle	Asenapine	9	268	2412	0	3.56923714759536	4	6
+PPI	Skeletal_muscle	Asparagine	2	268	536	0	3.37686567164179	4	5
+PPI	Skeletal_muscle	Atenolol	3	268	804	0	2.98134328358209	3	5
+PPI	Skeletal_muscle	Auranofin	3	268	804	0	2.98009950248756	3	5
+PPI	Skeletal_muscle	Azathioprine	5	268	1340	0	3.27462686567164	3	5
+PPI	Skeletal_muscle	Balsalazide	4	268	1072	0	3.45615671641791	3	6
+PPI	Skeletal_muscle	Bazedoxifene	2	268	536	0	2.56529850746269	2	4
+PPI	Skeletal_muscle	Belinostat	12	268	3216	0	3.04757462686567	3	5
+PPI	Skeletal_muscle	Benzthiazide	2	268	536	0	3.89365671641791	4	6
+PPI	Skeletal_muscle	Betaxolol	2	268	536	0	2.91977611940299	3	5
+PPI	Skeletal_muscle	Bethanidine	3	268	804	0	3.09203980099502	3	5
+PPI	Skeletal_muscle	Bevacizumab	8	268	2144	0	3.26259328358209	3	5
+PPI	Skeletal_muscle	Bezafibrate	8	268	2144	0	3.45848880597015	4	5
+PPI	Skeletal_muscle	Binimetinib	5	268	1340	0	3.61865671641791	3	7
+PPI	Skeletal_muscle	Bisoprolol	4	268	1072	0	3.36473880597015	3	5
+PPI	Skeletal_muscle	Bosutinib	10	268	2680	0	3.17798507462687	3	5
+PPI	Skeletal_muscle	Brexpiprazole	3	268	804	0	3.66791044776119	4	5
+PPI	Skeletal_muscle	Brigatinib	11	268	2948	0	3.33378561736771	3	5
+PPI	Skeletal_muscle	Brinzolamide	3	268	804	0	3.86567164179104	4	6
+PPI	Skeletal_muscle	Bufexamac	3	268	804	0	3.47885572139304	3	6
+PPI	Skeletal_muscle	Bumetanide	3	268	804	0	3.31218905472637	3	6
+PPI	Skeletal_muscle	Cabergoline	11	268	2948	0	3.6489145183175	4	6
+PPI	Skeletal_muscle	Caffeine	12	268	3216	0	3.56467661691542	4	7
+PPI	Skeletal_muscle	Calcium citrate	19	268	5092	0	3.38550667714061	3	7
+PPI	Skeletal_muscle	Calcium Phosphate	20	268	5360	0	3.41082089552239	3	7
+PPI	Skeletal_muscle	Calcium phosphate dihydrate	20	268	5360	0	3.41082089552239	3	7
+PPI	Skeletal_muscle	Cannabidiol	16	268	4288	0	3.61707089552239	4	7
+PPI	Skeletal_muscle	Capsaicin	6	268	1608	0	3.97823383084577	4	7
+PPI	Skeletal_muscle	Carteolol	2	268	536	0	2.91977611940299	3	5
+PPI	Skeletal_muscle	Carvedilol	16	268	4288	0	3.39365671641791	3	7
+PPI	Skeletal_muscle	Catumaxomab	4	268	1072	0	3.28731343283582	3	5
+PPI	Skeletal_muscle	Celecoxib	7	268	1876	0	3.83955223880597	4	6
+PPI	Skeletal_muscle	Celiprolol	3	268	804	0	3.09203980099502	3	5
+PPI	Skeletal_muscle	Certolizumab pegol			268	0	2.98134328358209	3	5
+PPI	Skeletal_muscle	Cetuximab	7	268	1876	0	3.19882729211087	3	5
+PPI	Skeletal_muscle	Chloroquine	6	268	1608	0	3.31654228855721	3	5
+PPI	Skeletal_muscle	Chlorpromazine	14	268	3752	0	3.76865671641791	4	7
+PPI	Skeletal_muscle	Cholecystokinin	4	268	1072	0	2.92444029850746	3	5
+PPI	Skeletal_muscle	Citric acid	6	268	1608	0	2.91169154228856	3	5
+PPI	Skeletal_muscle	Citrulline	4	268	1072	0	3.27518656716418	3	6
+PPI	Skeletal_muscle	Clenbuterol	5	268	1340	0	3.17686567164179	3	5
+PPI	Skeletal_muscle	Clomifene	3	268	804	0	3.29601990049751	4	5
+PPI	Skeletal_muscle	Clonidine	4	268	1072	0	3.56902985074627	4	5
+PPI	Skeletal_muscle	Clove oil	3	268	804	0	3.3955223880597	4	6
+PPI	Skeletal_muscle	Conjugated estrogens	9	268	2412	0	3.24212271973466	3	5
+PPI	Skeletal_muscle	Copper	98	268	26264	0	3.21630368565337	3	7
+PPI	Skeletal_muscle	Crofelemer			268	0	2.71268656716418	3	4
+PPI	Skeletal_muscle	Curcumin	6	268	1608	0	3.37562189054726	3	5
+PPI	Skeletal_muscle	Cyclosporine	8	268	2144	0	3.8964552238806	4	7
+PPI	Skeletal_muscle	Cyclothiazide	3	268	804	0	3.81592039800995	4	6
+PPI	Skeletal_muscle	D-alpha-Tocopherol acetate	10	268	2680	0	3.17574626865672	3	5
+PPI	Skeletal_muscle	D-Methionine			268	0	3.21641791044776	3	5
+PPI	Skeletal_muscle	Dabrafenib	6	268	1608	0	3.51990049751244	4	6
+PPI	Skeletal_muscle	Dacomitinib	4	268	1072	0	3.33208955223881	3	5
+PPI	Skeletal_muscle	Danazol	6	268	1608	0	3.21766169154229	3	5
+PPI	Skeletal_muscle	Dasatinib	20	268	5360	0	3.28432835820896	3	6
+PPI	Skeletal_muscle	Deferoxamine			268	0	2.34701492537313	2	4
+PPI	Skeletal_muscle	Desipramine	11	268	2948	0	3.6696065128901	4	7
+PPI	Skeletal_muscle	Desogestrel	5	268	1340	0	3.32014925373134	3	5
+PPI	Skeletal_muscle	Dexamethasone	12	268	3216	0	3.73445273631841	4	7
+PPI	Skeletal_muscle	Dexibuprofen	12	268	3216	0	3.59048507462687	4	7
+PPI	Skeletal_muscle	Dextroamphetamine	3	268	804	0	3.68905472636816	4	5
+PPI	Skeletal_muscle	Dextromethorphan	14	268	3752	0	3.48134328358209	3	7
+PPI	Skeletal_muscle	Diclofenamide	2	268	536	0	3.89365671641791	4	6
+PPI	Skeletal_muscle	Dienestrol	2	268	536	0	3.03917910447761	3	5
+PPI	Skeletal_muscle	Diethylstilbestrol	16	268	4288	0	3.43610074626866	4	7
+PPI	Skeletal_muscle	Dihydroergocornine	8	268	2144	0	3.5205223880597	4	6
+PPI	Skeletal_muscle	Dihydroergocristine	11	268	2948	0	3.61499321573948	4	6
+PPI	Skeletal_muscle	Dimercaprol			268	0	2.34701492537313	2	4
+PPI	Skeletal_muscle	Dimethyl fumarate	2	268	536	0	3.11940298507463	3	5
+PPI	Skeletal_muscle	Dipivefrin	2	268	536	0	3.11753731343284	3	5
+PPI	Skeletal_muscle	Dipyrithione	2	268	536	0	3.37313432835821	4	6
+PPI	Skeletal_muscle	DL-Methylephedrine	4	268	1072	0	3.20708955223881	3	5
+PPI	Skeletal_muscle	Dobutamine	5	268	1340	0	2.92761194029851	3	5
+PPI	Skeletal_muscle	Doconexent	5	268	1340	0	3.58955223880597	4	6
+PPI	Skeletal_muscle	Donepezil	10	268	2680	0	3.47462686567164	3	5
+PPI	Skeletal_muscle	Dorzolamide	3	268	804	0	4.33084577114428	4	7
+PPI	Skeletal_muscle	Dosulepin	6	268	1608	0	3.87624378109453	4	7
+PPI	Skeletal_muscle	Doxazosin	5	268	1340	0	4.0910447761194	4	7
+PPI	Skeletal_muscle	Doxepin	12	268	3216	0	3.82929104477612	4	7
+PPI	Skeletal_muscle	Doxorubicin	14	268	3752	0	3.5863539445629	4	6
+PPI	Skeletal_muscle	Dronedarone	13	268	3484	0	3.58323765786452	4	6
+PPI	Skeletal_muscle	Drotrecogin alfa	4	268	1072	1	3.71828358208955	4	6
+PPI	Skeletal_muscle	Droxidopa	5	268	1340	0	3.31716417910448	3	5
+PPI	Skeletal_muscle	Elexacaftor	6	268	1608	0	3.69776119402985	4	7
+PPI	Skeletal_muscle	Enzacamene	4	268	1072	0	2.81529850746269	3	5
+PPI	Skeletal_muscle	Ephedrine	5	268	1340	0	3.24776119402985	3	5
+PPI	Skeletal_muscle	Epinephrine	6	268	1608	0	3.16231343283582	3	5
+PPI	Skeletal_muscle	Ergoloid mesylate	11	268	2948	0	3.61499321573948	4	6
+PPI	Skeletal_muscle	Erlotinib	7	268	1876	0	3.40138592750533	3	5
+PPI	Skeletal_muscle	Escitalopram	10	268	2680	0	3.82761194029851	4	7
+PPI	Skeletal_muscle	Estradiol	11	268	2948	0	3.42537313432836	3	7
+PPI	Skeletal_muscle	Estradiol acetate	13	268	3484	0	3.51836969001148	4	7
+PPI	Skeletal_muscle	Estradiol benzoate	13	268	3484	0	3.51836969001148	4	7
+PPI	Skeletal_muscle	Estradiol cypionate	13	268	3484	0	3.51836969001148	4	7
+PPI	Skeletal_muscle	Estradiol dienanthate	13	268	3484	0	3.51836969001148	4	7
+PPI	Skeletal_muscle	Estradiol valerate	13	268	3484	0	3.51836969001148	4	7
+PPI	Skeletal_muscle	Estramustine	6	268	1608	0	3.4863184079602	4	6
+PPI	Skeletal_muscle	Estriol	4	268	1072	0	3.14085820895522	3	5
+PPI	Skeletal_muscle	Estrone	9	268	2412	0	3.39469320066335	3	7
+PPI	Skeletal_muscle	Estrone sulfate	5	268	1340	0	3.13358208955224	3	5
+PPI	Skeletal_muscle	Etafedrine			268	0	2.69776119402985	3	4
+PPI	Skeletal_muscle	Etanercept	9	268	2412	0	3.46310116086236	3	6
+PPI	Skeletal_muscle	Ethanol	12	268	3216	0	3.87033582089552	4	7
+PPI	Skeletal_muscle	Ethinylestradiol	10	268	2680	0	3.54888059701493	4	7
+PPI	Skeletal_muscle	Ethynodiol diacetate	3	268	804	0	3.2910447761194	3	5
+PPI	Skeletal_muscle	Etonogestrel	5	268	1340	0	3.32014925373134	3	5
+PPI	Skeletal_muscle	Eugenol	3	268	804	0	2.55099502487562	2	4
+PPI	Skeletal_muscle	Everolimus	3	268	804	0	3.42661691542289	4	5
+PPI	Skeletal_muscle	Fenofibric acid	4	268	1072	0	3.29291044776119	3	5
+PPI	Skeletal_muscle	Fenoldopam	3	268	804	0	3.93407960199005	4	6
+PPI	Skeletal_muscle	Fenoprofen	5	268	1340	0	3.49776119402985	4	6
+PPI	Skeletal_muscle	Fenoterol	3	268	804	0	3.09203980099502	3	5
+PPI	Skeletal_muscle	Ferric derisomaltose	2	268	536	0	2.88805970149254	3	5
+PPI	Skeletal_muscle	Ferric pyrophosphate citrate	4	268	1072	0	3.46735074626866	4	5
+PPI	Skeletal_muscle	Ferrous ascorbate	6	268	1608	0	3.35012437810945	3	6
+PPI	Skeletal_muscle	Ferrous fumarate	6	268	1608	0	3.35012437810945	3	6
+PPI	Skeletal_muscle	Ferrous glycine sulfate	6	268	1608	0	3.35012437810945	3	6
+PPI	Skeletal_muscle	Ferrous succinate	6	268	1608	0	3.35012437810945	3	6
+PPI	Skeletal_muscle	Ferrous sulfate anhydrous	3	268	804	0	2.97761194029851	3	5
+PPI	Skeletal_muscle	Fingolimod	5	268	1340	0	3.67537313432836	3	7
+PPI	Skeletal_muscle	Fish oil	11	268	2948	0	3.44708276797829	4	6
+PPI	Skeletal_muscle	Florbetaben (18F)			268	0	2.34701492537313	2	4
+PPI	Skeletal_muscle	Florbetapir (18F)			268	0	2.34701492537313	2	4
+PPI	Skeletal_muscle	Flufenamic acid	6	268	1608	0	3.42101990049751	4	6
+PPI	Skeletal_muscle	Fluocinolone acetonide	5	268	1340	0	3.07686567164179	3	5
+PPI	Skeletal_muscle	Fluoxymesterone	5	268	1340	0	3.01194029850746	3	5
+PPI	Skeletal_muscle	Flutemetamol (18F)			268	0	2.34701492537313	2	4
+PPI	Skeletal_muscle	Foreskin fibroblast (neonatal)	9	268	2412	0	3.63391376451078	4	6
+PPI	Skeletal_muscle	Foreskin keratinocyte (neonatal)	9	268	2412	0	3.33250414593698	3	6
+PPI	Skeletal_muscle	Formoterol	5	268	1340	0	3.51567164179105	3	7
+PPI	Skeletal_muscle	Fostamatinib	167	268	44756	0	3.44686745911163	4	7
+PPI	Skeletal_muscle	Fulvestrant	2	268	536	0	3.13246268656716	3	5
+PPI	Skeletal_muscle	Gefitinib	5	268	1340	0	3.70522388059702	4	7
+PPI	Skeletal_muscle	Gestrinone	6	268	1608	0	3.11691542288557	3	5
+PPI	Skeletal_muscle	Glipizide	3	268	804	0	3.25870646766169	3	5
+PPI	Skeletal_muscle	Glucosamine	3	268	804	0	3.60696517412935	3	6
+PPI	Skeletal_muscle	Glutamic acid	21	268	5628	0	3.55703624733476	4	6
+PPI	Skeletal_muscle	Glutathione	14	268	3752	0	3.80863539445629	4	6
+PPI	Skeletal_muscle	Glyburide	9	268	2412	0	3.59535655058043	4	7
+PPI	Skeletal_muscle	Glycyrrhizic acid	6	268	1608	0	3.42661691542289	3	6
+PPI	Skeletal_muscle	Golimumab			268	0	2.98134328358209	3	5
+PPI	Skeletal_muscle	Hexachlorophene			268	0	2.45522388059702	2	4
+PPI	Skeletal_muscle	Homosalate	3	268	804	0	2.86194029850746	3	5
+PPI	Skeletal_muscle	Human calcitonin	2	268	536	0	3.41791044776119	4	6
+PPI	Skeletal_muscle	Human immunoglobulin G	7	268	1876	0	3.64392324093817	4	6
+PPI	Skeletal_muscle	Hyaluronic acid	5	268	1340	0	3.66940298507463	4	6
+PPI	Skeletal_muscle	Ibritumomab tiuxetan	9	268	2412	0	3.42578772802653	3	6
+PPI	Skeletal_muscle	Ibrutinib	3	268	804	0	3.21641791044776	3	5
+PPI	Skeletal_muscle	Ibuprofen	12	268	3216	0	3.55876865671642	4	7
+PPI	Skeletal_muscle	Icosapent	7	268	1876	0	3.64712153518124	4	6
+PPI	Skeletal_muscle	Indacaterol	3	268	804	0	3.43905472636816	4	5
+PPI	Skeletal_muscle	Indigotindisulfonic acid			268	0	3.55223880597015	3	5
+PPI	Skeletal_muscle	Indomethacin	10	268	2680	0	3.81007462686567	4	7
+PPI	Skeletal_muscle	Infliximab			268	0	2.98134328358209	3	5
+PPI	Skeletal_muscle	Ingenol mebutate	2	268	536	0	3.22388059701493	3	5
+PPI	Skeletal_muscle	Insulin pork	8	268	2144	0	3.60634328358209	4	6
+PPI	Skeletal_muscle	Iron	6	268	1608	0	3.35012437810945	3	6
+PPI	Skeletal_muscle	Iron Dextran	5	268	1340	0	3.40522388059702	3	5
+PPI	Skeletal_muscle	Isoetharine	2	268	536	0	2.91977611940299	3	5
+PPI	Skeletal_muscle	Isoprenaline	6	268	1608	0	2.9863184079602	3	5
+PPI	Skeletal_muscle	Isopropyl alcohol	5	268	1340	0	3.1544776119403	3	5
+PPI	Skeletal_muscle	Ivacaftor	4	268	1072	0	3.35914179104478	3	5
+PPI	Skeletal_muscle	L-Glutamine	10	268	2680	0	3.27164179104478	3	5
+PPI	Skeletal_muscle	Labetalol	5	268	1340	0	3.53880597014925	3	7
+PPI	Skeletal_muscle	Lamivudine	5	268	1340	0	3.20597014925373	3	5
+PPI	Skeletal_muscle	Lapatinib	6	268	1608	0	3.66791044776119	4	7
+PPI	Skeletal_muscle	Lasofoxifene	2	268	536	0	2.56529850746269	2	4
+PPI	Skeletal_muscle	Levamlodipine	6	268	1608	0	3.35074626865672	3	5
+PPI	Skeletal_muscle	Levobunolol	2	268	536	0	2.91977611940299	3	5
+PPI	Skeletal_muscle	Levonorgestrel	6	268	1608	0	3.11691542288557	3	5
+PPI	Skeletal_muscle	Levosalbutamol	2	268	536	0	3.25373134328358	3	5
+PPI	Skeletal_muscle	Lidocaine	5	268	1340	0	3.54925373134328	4	5
+PPI	Skeletal_muscle	Lindane	3	268	804	0	3.21517412935323	3	5
+PPI	Skeletal_muscle	Liraglutide	3	268	804	0	3.18034825870647	3	5
+PPI	Skeletal_muscle	Lithium carbonate	3	268	804	0	3.59701492537313	4	6
+PPI	Skeletal_muscle	Lithium citrate	3	268	804	0	3.59701492537313	4	6
+PPI	Skeletal_muscle	Lonoctocog alfa	6	268	1608	0	3.31654228855721	3	6
+PPI	Skeletal_muscle	Lumacaftor	6	268	1608	0	3.69776119402985	4	7
+PPI	Skeletal_muscle	Maprotiline	5	268	1340	0	3.58880597014925	4	5
+PPI	Skeletal_muscle	Medroxyprogesterone acetate	6	268	1608	0	3.38992537313433	4	5
+PPI	Skeletal_muscle	Mefloquine	4	268	1072	0	3.48320895522388	4	5
+PPI	Skeletal_muscle	Melatonin	7	268	1876	0	3.50533049040512	3	7
+PPI	Skeletal_muscle	Mephentermine	4	268	1072	0	3.20708955223881	3	5
+PPI	Skeletal_muscle	Mesalazine	6	268	1608	0	3.25	3	6
+PPI	Skeletal_muscle	Mestranol	3	268	804	0	3.27238805970149	3	5
+PPI	Skeletal_muscle	Methazolamide	2	268	536	0	3.89365671641791	4	6
+PPI	Skeletal_muscle	Methionine	4	268	1072	0	3.125	3	5
+PPI	Skeletal_muscle	Methotrimeprazine	8	268	2144	0	3.8740671641791	4	7
+PPI	Skeletal_muscle	Methoxamine			268	0	3.55223880597015	3	5
+PPI	Skeletal_muscle	Methyltestosterone	5	268	1340	0	3.10298507462687	3	5
+PPI	Skeletal_muscle	Metipranolol	2	268	536	0	2.91977611940299	3	5
+PPI	Skeletal_muscle	Metoprolol	4	268	1072	0	3.1884328358209	3	5
+PPI	Skeletal_muscle	Miconazole	10	268	2680	0	3.92761194029851	4	7
+PPI	Skeletal_muscle	Midostaurin	9	268	2412	0	3.94900497512438	4	7
+PPI	Skeletal_muscle	Minocycline	16	268	4288	0	3.32672574626866	3	6
+PPI	Skeletal_muscle	Mirtazapine	6	268	1608	0	3.72574626865672	4	6
+PPI	Skeletal_muscle	Mitotane	6	268	1608	0	3.3047263681592	3	5
+PPI	Skeletal_muscle	Modafinil	4	268	1072	0	4.07929104477612	4	7
+PPI	Skeletal_muscle	Moroctocog alfa	6	268	1608	0	3.31654228855721	3	6
+PPI	Skeletal_muscle	Moxisylyte	2	268	536	0	3.68097014925373	4	5
+PPI	Skeletal_muscle	Muromonab	11	268	2948	0	3.35040705563094	3	5
+PPI	Skeletal_muscle	NADH	46	268	12328	0	3.36396820246593	3	6
+PPI	Skeletal_muscle	Nadolol	3	268	804	0	3.21641791044776	3	5
+PPI	Skeletal_muscle	Nadroparin	3	268	804	0	3.51865671641791	3	6
+PPI	Skeletal_muscle	Naloxone	7	268	1876	0	3.44243070362473	4	6
+PPI	Skeletal_muscle	Natalizumab	6	268	1608	0	3.16977611940299	3	5
+PPI	Skeletal_muscle	Nateglinide	5	268	1340	0	3.42611940298507	3	5
+PPI	Skeletal_muscle	Nebivolol	6	268	1608	0	3.56467661691542	3	7
+PPI	Skeletal_muscle	Necitumumab			268	0	2.6044776119403	3	4
+PPI	Skeletal_muscle	Nedocromil			268	0	2.27611940298507	2	4
+PPI	Skeletal_muscle	Nefazodone	10	268	2680	0	3.7160447761194	4	6
+PPI	Skeletal_muscle	Neratinib	4	268	1072	0	3.33208955223881	3	5
+PPI	Skeletal_muscle	Nicardipine	9	268	2412	0	3.86194029850746	4	7
+PPI	Skeletal_muscle	Nicotinamide	5	268	1340	0	3.83208955223881	4	7
+PPI	Skeletal_muscle	Niraparib	2	268	536	0	2.85820895522388	3	5
+PPI	Skeletal_muscle	Nitrous acid	2	268	536	0	3.10074626865672	3	5
+PPI	Skeletal_muscle	Norepinephrine	6	268	1608	0	3.38121890547264	3	5
+PPI	Skeletal_muscle	Norethynodrel	4	268	1072	0	3.10261194029851	3	5
+PPI	Skeletal_muscle	Norgestimate	8	268	2144	0	3.31203358208955	3	5
+PPI	Skeletal_muscle	Nortriptyline	15	268	4020	0	3.66094527363184	4	7
+PPI	Skeletal_muscle	Octocrylene	2	268	536	0	2.56529850746269	2	4
+PPI	Skeletal_muscle	Olanzapine	14	268	3752	0	3.64179104477612	4	7
+PPI	Skeletal_muscle	Olaparib	4	268	1072	0	3.3339552238806	3	5
+PPI	Skeletal_muscle	Oleic Acid	7	268	1876	0	3.27825159914712	3	5
+PPI	Skeletal_muscle	Omega-3 fatty acids	5	268	1340	0	3.60970149253731	4	6
+PPI	Skeletal_muscle	Omega-3-carboxylic acids	6	268	1608	0	3.13370646766169	3	5
+PPI	Skeletal_muscle	Orciprenaline			268	0	2.69776119402985	3	4
+PPI	Skeletal_muscle	Orlistat	3	268	804	0	3.43407960199005	4	5
+PPI	Skeletal_muscle	Ornithine	2	268	536	0	4.58768656716418	4	8
+PPI	Skeletal_muscle	Osimertinib	3	268	804	0	3.40796019900498	4	5
+PPI	Skeletal_muscle	Ospemifene	3	268	804	0	3.82089552238806	4	7
+PPI	Skeletal_muscle	Oxprenolol	3	268	804	0	3.09203980099502	3	5
+PPI	Skeletal_muscle	Oxybenzone	4	268	1072	0	2.81529850746269	3	5
+PPI	Skeletal_muscle	Oxymetazoline			268	0	3.55223880597015	3	5
+PPI	Skeletal_muscle	Palbociclib	6	268	1608	0	3.36567164179104	3	5
+PPI	Skeletal_muscle	Paliperidone	7	268	1876	0	3.75692963752665	4	6
+PPI	Skeletal_muscle	Palmitic Acid	7	268	1876	1	3.81663113006397	4	7
+PPI	Skeletal_muscle	Panitumumab			268	0	2.6044776119403	3	4
+PPI	Skeletal_muscle	Panobinostat	12	268	3216	0	3.06902985074627	3	5
+PPI	Skeletal_muscle	Paroxetine	15	268	4020	0	3.75248756218906	4	7
+PPI	Skeletal_muscle	Pemetrexed	3	268	804	0	3.12810945273632	3	5
+PPI	Skeletal_muscle	Penbutolol	2	268	536	0	2.91977611940299	3	5
+PPI	Skeletal_muscle	Pentaerythritol tetranitrate	4	268	1072	0	3.28451492537313	3	5
+PPI	Skeletal_muscle	Pergolide	8	268	2144	0	3.81110074626866	4	6
+PPI	Skeletal_muscle	Periciazine	3	268	804	0	3.52238805970149	3	6
+PPI	Skeletal_muscle	Permethrin	2	268	536	0	3.01865671641791	3	5
+PPI	Skeletal_muscle	Phendimetrazine	2	268	536	0	3.65485074626866	4	5
+PPI	Skeletal_muscle	Phenolphthalein	4	268	1072	0	3.31716417910448	4	5
+PPI	Skeletal_muscle	Phenoxybenzamine	3	268	804	0	2.98880597014925	3	5
+PPI	Skeletal_muscle	Phenylpropanolamine	3	268	804	0	3.44402985074627	3	6
+PPI	Skeletal_muscle	Phosphatidyl serine			268	0	3.48507462686567	4	5
+PPI	Skeletal_muscle	Pimecrolimus	2	268	536	0	3.23507462686567	3	5
+PPI	Skeletal_muscle	Pindolol	3	268	804	0	3.09203980099502	3	5
+PPI	Skeletal_muscle	Pioglitazone	4	268	1072	0	3.37779850746269	3	5
+PPI	Skeletal_muscle	Pirbuterol	2	268	536	0	2.91977611940299	3	5
+PPI	Skeletal_muscle	Pizotifen	5	268	1340	0	3.68582089552239	4	6
+PPI	Skeletal_muscle	Polyestradiol phosphate			268	0	2.45522388059702	2	4
+PPI	Skeletal_muscle	Pomalidomide	4	268	1072	0	3.70615671641791	4	6
+PPI	Skeletal_muscle	Prasterone	11	268	2948	0	3.35176390773406	3	5
+PPI	Skeletal_muscle	Prazosin	3	268	804	0	3.81592039800995	4	6
+PPI	Skeletal_muscle	Pretomanid			268	2	3.80970149253731	4	5
+PPI	Skeletal_muscle	Procaterol			268	0	2.69776119402985	3	4
+PPI	Skeletal_muscle	Prochlorperazine			268	0	3.55223880597015	3	5
+PPI	Skeletal_muscle	Progesterone	11	268	2948	0	3.52306648575305	4	7
+PPI	Skeletal_muscle	Promethazine	16	268	4288	0	3.53941231343284	4	6
+PPI	Skeletal_muscle	Propafenone	6	268	1608	0	3.58582089552239	4	6
+PPI	Skeletal_muscle	Propranolol	7	268	1876	0	3.59968017057569	4	7
+PPI	Skeletal_muscle	Protokylol			268	0	2.69776119402985	3	4
+PPI	Skeletal_muscle	Pseudoephedrine	18	268	4824	0	3.27072968490879	3	5
+PPI	Skeletal_muscle	Pyridoxal phosphate	13	268	3484	0	3.33897818599311	3	6
+PPI	Skeletal_muscle	Quetiapine	10	268	2680	0	3.86044776119403	4	7
+PPI	Skeletal_muscle	Quinestrol			268	0	2.45522388059702	2	4
+PPI	Skeletal_muscle	Racepinephrine	4	268	1072	0	3.20708955223881	3	5
+PPI	Skeletal_muscle	Raloxifene	7	268	1876	0	3.28144989339019	3	5
+PPI	Skeletal_muscle	Ranolazine	9	268	2412	0	3.63557213930348	4	5
+PPI	Skeletal_muscle	Regorafenib	14	268	3752	0	3.56050106609808	4	6
+PPI	Skeletal_muscle	Repaglinide	5	268	1340	0	3.42761194029851	3	5
+PPI	Skeletal_muscle	Ribociclib	3	268	804	0	3.26492537313433	3	5
+PPI	Skeletal_muscle	Rifabutin	6	268	1608	0	3.69838308457711	4	7
+PPI	Skeletal_muscle	Risperidone	7	268	1876	0	3.72174840085288	4	6
+PPI	Skeletal_muscle	Ritodrine	2	268	536	0	3.09514925373134	3	5
+PPI	Skeletal_muscle	Romidepsin	7	268	1876	0	3.33955223880597	3	7
+PPI	Skeletal_muscle	Ropinirole	2	268	536	0	3.45149253731343	3	5
+PPI	Skeletal_muscle	Rosiglitazone	9	268	2412	0	3.41500829187396	3	5
+PPI	Skeletal_muscle	Rucaparib	6	268	1608	0	3.68097014925373	4	7
+PPI	Skeletal_muscle	Sacubitril			268	0	3.34701492537313	3	5
+PPI	Skeletal_muscle	Salbutamol	4	268	1072	0	3.2714552238806	3	5
+PPI	Skeletal_muscle	Salmeterol	6	268	1608	0	3.29042288557214	3	5
+PPI	Skeletal_muscle	Sarilumab	6	268	1608	0	3.44092039800995	3	5
+PPI	Skeletal_muscle	Semaglutide	3	268	804	0	3.18034825870647	3	5
+PPI	Skeletal_muscle	Silodosin	3	268	804	0	3.72388059701493	4	5
+PPI	Skeletal_muscle	Sirolimus	4	268	1072	0	3.82555970149254	4	7
+PPI	Skeletal_muscle	Sodium ferric gluconate complex	3	268	804	0	3.35820895522388	3	5
+PPI	Skeletal_muscle	Sorafenib	14	268	3752	0	3.63992537313433	4	7
+PPI	Skeletal_muscle	Sotalol	3	268	804	0	3.30845771144279	3	6
+PPI	Skeletal_muscle	Sulfasalazine	10	268	2680	0	3.36791044776119	3	6
+PPI	Skeletal_muscle	Sulpiride	2	268	536	0	3.89365671641791	4	6
+PPI	Skeletal_muscle	Synthetic Conjugated Estrogens, A	2	268	536	0	3.13246268656716	3	5
+PPI	Skeletal_muscle	Synthetic Conjugated Estrogens, B	2	268	536	0	3.13246268656716	3	5
+PPI	Skeletal_muscle	Talazoparib	3	268	804	0	3.17537313432836	3	5
+PPI	Skeletal_muscle	Tamoxifen	23	268	6164	0	3.49318624269955	4	7
+PPI	Skeletal_muscle	Tamsulosin	2	268	536	0	3.68097014925373	4	5
+PPI	Skeletal_muscle	Telmisartan	5	268	1340	0	3.77164179104478	4	7
+PPI	Skeletal_muscle	Temsirolimus	3	268	804	0	3.42661691542289	4	5
+PPI	Skeletal_muscle	Tenecteplase	9	268	2412	0	3.0667495854063	3	5
+PPI	Skeletal_muscle	Terazosin	4	268	1072	0	3.88526119402985	4	6
+PPI	Skeletal_muscle	Terbutaline	3	268	804	0	3.09203980099502	3	5
+PPI	Skeletal_muscle	Testosterone	9	268	2412	0	3.5907960199005	4	7
+PPI	Skeletal_muscle	Testosterone cypionate	10	268	2680	0	3.61268656716418	4	7
+PPI	Skeletal_muscle	Testosterone enanthate	10	268	2680	0	3.61268656716418	4	7
+PPI	Skeletal_muscle	Testosterone undecanoate	8	268	2144	0	3.67490671641791	4	7
+PPI	Skeletal_muscle	Tezacaftor	3	268	804	0	3.44402985074627	4	5
+PPI	Skeletal_muscle	Thalidomide	7	268	1876	0	3.88592750533049	4	7
+PPI	Skeletal_muscle	Theophylline	6	268	1608	0	3.54539800995025	3	7
+PPI	Skeletal_muscle	Thioridazine	6	268	1608	0	4.36256218905473	4	7
+PPI	Skeletal_muscle	Tibolone			268	0	2.45522388059702	2	4
+PPI	Skeletal_muscle	Timolol	4	268	1072	0	3.71175373134328	4	7
+PPI	Skeletal_muscle	Tinzaparin	2	268	536	1	3.11753731343284	3	6
+PPI	Skeletal_muscle	Tizanidine	2	268	536	0	3.7294776119403	4	5
+PPI	Skeletal_muscle	Topiramate	17	268	4556	0	3.57594381035997	4	7
+PPI	Skeletal_muscle	Toremifene	4	268	1072	0	3.42444029850746	4	5
+PPI	Skeletal_muscle	Tositumomab	8	268	2144	0	3.4267723880597	3	6
+PPI	Skeletal_muscle	Trastuzumab	6	268	1608	0	3.16480099502488	3	5
+PPI	Skeletal_muscle	Triclosan	4	268	1072	0	3.18936567164179	3	5
+PPI	Skeletal_muscle	Triflusal	4	268	1072	0	2.93376865671642	3	5
+PPI	Skeletal_muscle	Trilostane	3	268	804	0	2.98009950248756	3	5
+PPI	Skeletal_muscle	Trimipramine	14	268	3752	0	3.7137526652452	4	7
+PPI	Skeletal_muscle	Troglitazone	10	268	2680	0	3.54179104477612	4	7
+PPI	Skeletal_muscle	Valdecoxib	4	268	1072	0	3.95522388059702	4	6
+PPI	Skeletal_muscle	Valproic acid	12	268	3216	0	3.44371890547264	3	7
+PPI	Skeletal_muscle	Vandetanib	7	268	1876	0	3.27398720682303	3	5
+PPI	Skeletal_muscle	Vilanterol	2	268	536	0	3.25373134328358	3	5
+PPI	Skeletal_muscle	Vitamin E	12	268	3216	0	3.26958955223881	3	5
+PPI	Skeletal_muscle	Vorinostat	5	268	1340	0	2.91268656716418	3	5
+PPI	Skeletal_muscle	Voxelotor	3	268	804	0	3.92786069651741	4	7
+PPI	Skeletal_muscle	Xanthinol	5	268	1340	0	2.83955223880597	3	5
+PPI	Skeletal_muscle	Xylometazoline			268	0	3.55223880597015	3	5
+PPI	Skeletal_muscle	Zanubrutinib	13	268	3484	0	3.25631458094145	3	5
+PPI	Skeletal_muscle	Zinc	68	268	18224	0	3.1524363476734	3	6
+PPI	Skeletal_muscle	Zinc acetate	69	268	18492	0	3.17969932943976	3	6
+PPI	Skeletal_muscle	Zinc chloride	59	268	15812	0	3.25379458639008	3	8
+PPI	Skeletal_muscle	Zonisamide	6	268	1608	0	4.09577114427861	4	7
+GCN	Adipose_subcutaneous	Aldesleukin	2	21	42	0	3.66666666666667	4	6
+GCN	Adipose_subcutaneous	Alprostadil			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Asunaprevir			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Atazanavir			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Atorvastatin			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Baricitinib			21	0	4	4	8
+GCN	Adipose_subcutaneous	Basiliximab			21	0	3.57142857142857	4	6
+GCN	Adipose_subcutaneous	Benzoic acid			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Benzylpenicillin			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Bilastine			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Cannabidiol			21	2	3.0952380952381	3	5
+GCN	Adipose_subcutaneous	Cholecalciferol			21	2	3.04761904761905	3	5
+GCN	Adipose_subcutaneous	Cholecystokinin			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Citric acid	3	21	63	0	4.19047619047619	4	7
+GCN	Adipose_subcutaneous	Conjugated estrogens			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Copper	3	21	63	1	3.6984126984127	3	8
+GCN	Adipose_subcutaneous	Denileukin diftitox	2	21	42	0	3.66666666666667	4	6
+GCN	Adipose_subcutaneous	Dexibuprofen			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Dextromethorphan	5	21	105	1	3.19047619047619	3	6
+GCN	Adipose_subcutaneous	Diethylstilbestrol			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Dinoprostone			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Dipyridamole			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Efalizumab	2	21	42	0	2.76190476190476	3	6
+GCN	Adipose_subcutaneous	Ergocalciferol			21	2	3.04761904761905	3	5
+GCN	Adipose_subcutaneous	Erlotinib			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Estradiol acetate			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Estradiol benzoate			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Estradiol cypionate			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Estradiol dienanthate			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Estradiol valerate			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Estrone			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Ferric cation			21	0	3	3	6
+GCN	Adipose_subcutaneous	Ferric derisomaltose			21	0	3	3	6
+GCN	Adipose_subcutaneous	Ferrous ascorbate			21	0	3	3	6
+GCN	Adipose_subcutaneous	Ferrous fumarate			21	0	3	3	6
+GCN	Adipose_subcutaneous	Ferrous gluconate			21	0	3	3	6
+GCN	Adipose_subcutaneous	Ferrous glycine sulfate			21	0	3	3	6
+GCN	Adipose_subcutaneous	Ferrous succinate			21	0	3	3	6
+GCN	Adipose_subcutaneous	Ferrous sulfate anhydrous			21	0	3	3	6
+GCN	Adipose_subcutaneous	Fexofenadine			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Fluvastatin			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Fostamatinib	16	21	336	0	3.54761904761905	3	8
+GCN	Adipose_subcutaneous	Gallium citrate Ga-67	2	21	42	0	3.16666666666667	3	6
+GCN	Adipose_subcutaneous	Gallium nitrate			21	0	3	3	6
+GCN	Adipose_subcutaneous	Gemfibrozil			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Glutamic acid			21	2	3.71428571428571	3	7
+GCN	Adipose_subcutaneous	Glyburide			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Ibuprofen			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Iloprost			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Indinavir			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Iron			21	0	3	3	6
+GCN	Adipose_subcutaneous	Itraconazole			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Latanoprostene bunod			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Leflunomide			21	0	4	4	8
+GCN	Adipose_subcutaneous	Levothyroxine			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Lifitegrast	2	21	42	0	3.42857142857143	4	7
+GCN	Adipose_subcutaneous	Lovastatin	2	21	42	0	3.42857142857143	4	7
+GCN	Adipose_subcutaneous	Minocycline			21	2	3.61904761904762	4	6
+GCN	Adipose_subcutaneous	Montelukast			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Muromonab	9	21	189	0	3.88359788359788	4	8
+GCN	Adipose_subcutaneous	Nefazodone			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Nelfinavir			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Niacin			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Nintedanib			21	0	3.57142857142857	4	6
+GCN	Adipose_subcutaneous	Niraparib			21	2	3.47619047619048	4	6
+GCN	Adipose_subcutaneous	Novobiocin			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Pexidartinib	2	21	42	0	4.02380952380952	4	7
+GCN	Adipose_subcutaneous	Piroxicam			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Pitavastatin	2	21	42	0	3.42857142857143	4	7
+GCN	Adipose_subcutaneous	Ponatinib			21	0	3.57142857142857	4	6
+GCN	Adipose_subcutaneous	Prasterone			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Pravastatin			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Pyridoxal phosphate	3	21	63	1	3.07936507936508	3	7
+GCN	Adipose_subcutaneous	Reserpine			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Rifampicin			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Rifamycin			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Rilonacept			21	2	3.0952380952381	3	5
+GCN	Adipose_subcutaneous	Ritonavir			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Rosuvastatin	2	21	42	0	3.42857142857143	4	7
+GCN	Adipose_subcutaneous	Rubidium Rb-82			21	0	3.66666666666667	4	7
+GCN	Adipose_subcutaneous	Salicylic acid			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Saquinavir			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Simeprevir			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Simvastatin	2	21	42	0	3.42857142857143	4	7
+GCN	Adipose_subcutaneous	Sulfasalazine	2	21	42	0	3.61904761904762	4	7
+GCN	Adipose_subcutaneous	Taurocholic acid			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Telaprevir			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Tetracycline			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Tetraferric tricitrate decahydrate			21	0	3	3	6
+GCN	Adipose_subcutaneous	Tipranavir			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Tolbutamide			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Valproic acid			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Velpatasvir			21	0	4.0952380952381	4	7
+GCN	Adipose_subcutaneous	Zanubrutinib	4	21	84	0	3.53571428571429	3	7
+GCN	Adipose_subcutaneous	Zinc	4	21	84	1	3.57142857142857	3	8
+GCN	Adipose_subcutaneous	Zinc acetate	4	21	84	1	3.57142857142857	3	8
+GCN	Adipose_subcutaneous	Zinc chloride	4	21	84	1	3.57142857142857	3	8
+GCN	Adipose_visceral	Acetylsalicylic acid	3	44	132	0	5.65909090909091	6	9
+GCN	Adipose_visceral	Adenosine phosphate			44	0	5.52272727272727	7.5	8
+GCN	Adipose_visceral	alpha-Tocopherol succinate	2	44	88	0	5.96590909090909	6	9
+GCN	Adipose_visceral	Amiodarone			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Amlodipine	2	44	88	0	6.125	6	9
+GCN	Adipose_visceral	Avanafil			44	0	4.95454545454545	6.5	7
+GCN	Adipose_visceral	Bioallethrin	3	44	132	0	6.21212121212121	7	9
+GCN	Adipose_visceral	Bosutinib			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Butamben	4	44	176	0	5.91477272727273	6	9
+GCN	Adipose_visceral	Caffeine	3	44	132	0	5.90909090909091	7	9
+GCN	Adipose_visceral	Calcium citrate	4	44	176	0	6.30681818181818	8.5	9
+GCN	Adipose_visceral	Calcium Phosphate	4	44	176	0	6.30681818181818	8.5	9
+GCN	Adipose_visceral	Calcium phosphate dihydrate	4	44	176	0	6.30681818181818	8.5	9
+GCN	Adipose_visceral	Cinnarizine	2	44	88	0	6.30681818181818	8.5	9
+GCN	Adipose_visceral	Clevidipine	2	44	88	0	5.625	5	9
+GCN	Adipose_visceral	Diltiazem			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Dipyridamole			44	0	4.95454545454545	6.5	7
+GCN	Adipose_visceral	Dronedarone	2	44	88	0	6.32954545454545	8.5	9
+GCN	Adipose_visceral	Drotaverine			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Enflurane	5	44	220	0	5.98636363636364	6	9
+GCN	Adipose_visceral	Ergocalciferol	4	44	176	0	6.25568181818182	6	9
+GCN	Adipose_visceral	Ethanol			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Felodipine	2	44	88	0	6.30681818181818	8.5	9
+GCN	Adipose_visceral	Fish oil			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Fostamatinib	20	44	880	0	5.25	6	9
+GCN	Adipose_visceral	Glutamic acid			44	2	5.56818181818182	6.5	7
+GCN	Adipose_visceral	Ibutilide			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Isavuconazole	2	44	88	0	6.25	8.5	9
+GCN	Adipose_visceral	Isradipine	2	44	88	0	6.30681818181818	8.5	9
+GCN	Adipose_visceral	Lacidipine			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Levamlodipine			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Levomenthol			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Magnesium sulfate			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Manidipine	2	44	88	0	6.30681818181818	8.5	9
+GCN	Adipose_visceral	Molsidomine			44	0	4.95454545454545	6.5	7
+GCN	Adipose_visceral	Nicardipine	2	44	88	0	6.32954545454545	8.5	9
+GCN	Adipose_visceral	Nifedipine	2	44	88	0	6.30681818181818	8.5	9
+GCN	Adipose_visceral	Nilvadipine	2	44	88	0	6.125	6	9
+GCN	Adipose_visceral	Nimodipine			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Nisoldipine			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Nitrendipine	2	44	88	0	6.30681818181818	8.5	9
+GCN	Adipose_visceral	Pentoxifylline			44	0	4.95454545454545	6.5	7
+GCN	Adipose_visceral	Phenytoin			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Phosphatidyl serine	2	44	88	0	5.94318181818182	6	9
+GCN	Adipose_visceral	Promethazine	4	44	176	0	6.01704545454545	6	9
+GCN	Adipose_visceral	Propiverine			44	0	6.22727272727273	8.5	9
+GCN	Adipose_visceral	Pseudoephedrine			44	0	4.38636363636364	2	9
+GCN	Adipose_visceral	Ranolazine	2	44	88	0	6.32954545454545	8.5	9
+GCN	Adipose_visceral	Sildenafil			44	0	4.95454545454545	6.5	7
+GCN	Adipose_visceral	Spironolactone	3	44	132	0	6.21212121212121	7	9
+GCN	Adipose_visceral	Tadalafil			44	0	4.95454545454545	6.5	7
+GCN	Adipose_visceral	Theophylline	2	44	88	0	5.64772727272727	7	9
+GCN	Adipose_visceral	Topiramate	3	44	132	0	5.77272727272727	7	9
+GCN	Adipose_visceral	Trimebutine	4	44	176	0	6.06818181818182	8	9
+GCN	Adipose_visceral	Udenafil			44	0	4.95454545454545	6.5	7
+GCN	Adipose_visceral	Vardenafil			44	0	4.95454545454545	6.5	7
+GCN	Adipose_visceral	Verapamil	3	44	132	0	6.34848484848485	8.5	9
+GCN	Adipose_visceral	Zinc	7	44	308	0	6.58441558441558	7	9
+GCN	Adipose_visceral	Zinc acetate	8	44	352	0	6.45738636363636	7	9
+GCN	Adipose_visceral	Zinc chloride	7	44	308	0	7.32467532467533	8	10
+GCN	Liver	Abemaciclib	2	58	116	0	5.37068965517241	6	10
+GCN	Liver	Abiraterone	2	58	116	0	5.20689655172414	6	10
+GCN	Liver	Acalabrutinib	2	58	116	0	5.18103448275862	5	10
+GCN	Liver	Acenocoumarol			58	0	5.68965517241379	7	10
+GCN	Liver	Adenosine phosphate			58	3	6.62068965517241	6	11
+GCN	Liver	Aflibercept			58	0	4.25862068965517	5	10
+GCN	Liver	Ajmaline			58	0	5.68965517241379	7	10
+GCN	Liver	Alfentanil			58	0	5.68965517241379	7	10
+GCN	Liver	Alprazolam			58	0	5.68965517241379	7	10
+GCN	Liver	Alteplase	4	58	232	0	5.42241379310345	5	13
+GCN	Liver	Amitriptyline			58	0	5.68965517241379	7	10
+GCN	Liver	Amoxapine			58	0	5.68965517241379	7	10
+GCN	Liver	Amsacrine			58	0	5.68965517241379	7	10
+GCN	Liver	Ancrod			58	0	4.3448275862069	5	10
+GCN	Liver	Anistreplase	3	58	174	0	5.59195402298851	5	13
+GCN	Liver	Anti-inhibitor coagulant complex	4	58	232	0	5.85344827586207	6	12
+GCN	Liver	Antihemophilic factor, human recombinant	3	58	174	0	5.22413793103448	6	11
+GCN	Liver	Argatroban			58	0	5.68965517241379	7	10
+GCN	Liver	Ascorbic acid	6	58	348	0	4.94540229885058	5	12
+GCN	Liver	Asenapine			58	0	5.68965517241379	7	10
+GCN	Liver	Atazanavir	2	58	116	0	5.20689655172414	6	10
+GCN	Liver	Atomoxetine			58	0	5.68965517241379	7	10
+GCN	Liver	Belinostat	2	58	116	1	5.4051724137931	5	10
+GCN	Liver	Bevacizumab	7	58	406	0	4.89162561576355	5	10
+GCN	Liver	Bosutinib	2	58	116	0	4.62931034482759	4	10
+GCN	Liver	Brolucizumab			58	0	4.25862068965517	5	10
+GCN	Liver	Bupropion			58	0	5.68965517241379	7	10
+GCN	Liver	Buspirone			58	0	5.68965517241379	7	10
+GCN	Liver	Butabarbital			58	0	4.39655172413793	4	10
+GCN	Liver	Butamben			58	0	5.68965517241379	7	10
+GCN	Liver	Calcium citrate	5	58	290	0	5.4	5	12
+GCN	Liver	Calcium Phosphate	6	58	348	0	5.41666666666667	5	12
+GCN	Liver	Calcium phosphate dihydrate	6	58	348	0	5.41666666666667	5	12
+GCN	Liver	Canagliflozin			58	0	5.68965517241379	7	10
+GCN	Liver	Carboxymethylcellulose			58	0	4.39655172413793	4	10
+GCN	Liver	Carvedilol	2	58	116	0	4.95689655172414	5	10
+GCN	Liver	Celecoxib			58	4	6.6551724137931	6	11
+GCN	Liver	Chloroquine			58	0	5.68965517241379	7	10
+GCN	Liver	Chlorpromazine			58	0	5.68965517241379	7	10
+GCN	Liver	Chondroitin sulfate	2	58	116	0	5.43103448275862	5	11
+GCN	Liver	Clindamycin			58	0	5.68965517241379	7	10
+GCN	Liver	Cocaine			58	0	5.68965517241379	7	10
+GCN	Liver	Copper	43	58	2494	0	5.87650360866079	6	15
+GCN	Liver	D-glucose	3	58	174	0	5	5	10
+GCN	Liver	Dalteparin			58	0	4.25862068965517	5	10
+GCN	Liver	Darunavir			58	0	5.68965517241379	7	10
+GCN	Liver	Dasatinib	6	58	348	0	5.48563218390805	5	12
+GCN	Liver	Delamanid			58	0	5.68965517241379	7	10
+GCN	Liver	Desipramine			58	0	5.68965517241379	7	10
+GCN	Liver	Dextrose, unspecified form	3	58	174	0	5	5	10
+GCN	Liver	Dichloroacetic acid			58	0	4.32758620689655	4.5	10
+GCN	Liver	Diltiazem			58	0	5.68965517241379	7	10
+GCN	Liver	Dipyridamole			58	0	5.68965517241379	7	10
+GCN	Liver	Disopyramide			58	0	5.68965517241379	7	10
+GCN	Liver	Doxepin			58	0	5.68965517241379	7	10
+GCN	Liver	Drotrecogin alfa	5	58	290	0	5.77241379310345	6	12
+GCN	Liver	Duloxetine			58	0	5.68965517241379	7	10
+GCN	Liver	Dutasteride			58	0	5.68965517241379	7	10
+GCN	Liver	Erlotinib			58	0	5.68965517241379	7	10
+GCN	Liver	Estradiol			58	0	5.68965517241379	7	10
+GCN	Liver	Estradiol acetate			58	0	5.68965517241379	7	10
+GCN	Liver	Estradiol benzoate			58	0	5.68965517241379	7	10
+GCN	Liver	Estradiol cypionate			58	0	5.68965517241379	7	10
+GCN	Liver	Estradiol dienanthate			58	0	5.68965517241379	7	10
+GCN	Liver	Estradiol valerate			58	0	5.68965517241379	7	10
+GCN	Liver	Etomidate			58	0	4.39655172413793	4	10
+GCN	Liver	Favipiravir	2	58	116	0	6.33620689655172	7	12
+GCN	Liver	Fentanyl			58	0	5.68965517241379	7	10
+GCN	Liver	Ferric cation	2	58	116	0	5.25862068965517	6	10
+GCN	Liver	Fexofenadine			58	0	5.68965517241379	7	10
+GCN	Liver	Flecainide			58	0	5.68965517241379	7	10
+GCN	Liver	Fludeoxyglucose (18F)	3	58	174	0	5	5	10
+GCN	Liver	Fluoxetine			58	0	5.68965517241379	7	10
+GCN	Liver	Foreskin keratinocyte (neonatal)	3	58	174	0	5.13793103448276	5	11
+GCN	Liver	Fostamatinib	47	58	2726	0	5.59941305942773	5	13
+GCN	Liver	Gefitinib			58	0	5.68965517241379	7	10
+GCN	Liver	Gliclazide			58	0	4.25862068965517	5	10
+GCN	Liver	Glutamic acid	6	58	348	0	5.9367816091954	6	13
+GCN	Liver	Grazoprevir			58	0	5.68965517241379	7	10
+GCN	Liver	Human thrombin	5	58	290	0	5.55172413793104	6	12
+GCN	Liver	Hydroxychloroquine			58	0	5.68965517241379	7	10
+GCN	Liver	Ibrutinib	2	58	116	0	5.18103448275862	5	10
+GCN	Liver	Imatinib	4	58	232	0	5.65948275862069	5	12
+GCN	Liver	Imipramine			58	0	5.68965517241379	7	10
+GCN	Liver	Ipratropium			58	0	5.68965517241379	7	10
+GCN	Liver	Irbesartan	2	58	116	0	5.57758620689655	5	10
+GCN	Liver	Istradefylline			58	0	5.68965517241379	7	10
+GCN	Liver	Ivacaftor			58	0	5.68965517241379	7	10
+GCN	Liver	L-Glutamine	8	58	464	0	5.58405172413793	6	12
+GCN	Liver	Labetalol			58	0	5.68965517241379	7	10
+GCN	Liver	Lacidipine			58	0	5.68965517241379	7	10
+GCN	Liver	Lidocaine			58	0	5.68965517241379	7	10
+GCN	Liver	Lonoctocog alfa	3	58	174	0	5.22413793103448	6	11
+GCN	Liver	Lopinavir			58	0	5.68965517241379	7	10
+GCN	Liver	Maprotiline			58	0	5.68965517241379	7	10
+GCN	Liver	Melatonin			58	0	4.56896551724138	5.5	10
+GCN	Liver	Meperidine			58	0	5.68965517241379	7	10
+GCN	Liver	Methadone			58	0	5.68965517241379	7	10
+GCN	Liver	Metoclopramide			58	0	5.68965517241379	7	10
+GCN	Liver	Minocycline	5	58	290	0	5.89655172413793	6	12
+GCN	Liver	Mirabegron			58	0	5.68965517241379	7	10
+GCN	Liver	Moroctocog alfa	3	58	174	0	5.22413793103448	6	11
+GCN	Liver	Nadolol			58	0	5.68965517241379	7	10
+GCN	Liver	Nateglinide	2	58	116	0	5.57758620689655	5	10
+GCN	Liver	Neratinib			58	0	5.68965517241379	7	10
+GCN	Liver	Nicotinamide	2	58	116	0	4.6551724137931	5	10
+GCN	Liver	Nifedipine			58	0	5.68965517241379	7	10
+GCN	Liver	Nintedanib	7	58	406	0	5.52463054187192	6	12
+GCN	Liver	Niraparib			58	0	4.55172413793104	5	8
+GCN	Liver	Nomifensine			58	0	5.68965517241379	7	10
+GCN	Liver	Nortriptyline			58	0	5.68965517241379	7	10
+GCN	Liver	Olanzapine			58	0	5.68965517241379	7	10
+GCN	Liver	Olaparib			58	0	4.55172413793104	5	8
+GCN	Liver	Oxybutynin			58	0	5.68965517241379	7	10
+GCN	Liver	Oxycodone			58	0	5.68965517241379	7	10
+GCN	Liver	Panobinostat	2	58	116	1	5.4051724137931	5	10
+GCN	Liver	Patisiran			58	0	5.68965517241379	7	10
+GCN	Liver	Penbutolol			58	0	5.68965517241379	7	10
+GCN	Liver	Pexidartinib	3	58	174	0	5.72413793103448	5	12
+GCN	Liver	Phenprocoumon			58	0	5.68965517241379	7	10
+GCN	Liver	Pidolic acid			58	0	4.25862068965517	5	10
+GCN	Liver	Pitavastatin	2	58	116	0	6.81896551724138	7	12
+GCN	Liver	Pitolisant			58	0	5.68965517241379	7	10
+GCN	Liver	Ponatinib	5	58	290	0	5.63103448275862	6	11
+GCN	Liver	Prazosin			58	0	5.68965517241379	7	10
+GCN	Liver	Progesterone	2	58	116	0	5.20689655172414	6	10
+GCN	Liver	Propranolol			58	0	5.68965517241379	7	10
+GCN	Liver	Prothrombin	2	58	116	0	5.01724137931035	6	10
+GCN	Liver	Pyridoxine			58	0	4.48275862068966	5	10
+GCN	Liver	Quinidine	2	58	116	0	5.8448275862069	6	12
+GCN	Liver	Raloxifene	3	58	174	0	6.19540229885058	7	12
+GCN	Liver	Ranibizumab			58	0	4.25862068965517	5	10
+GCN	Liver	Ranolazine			58	0	5.68965517241379	7	10
+GCN	Liver	Reteplase	3	58	174	0	5.59195402298851	5	13
+GCN	Liver	Rifampicin	2	58	116	0	5.20689655172414	6	10
+GCN	Liver	Riociguat			58	0	5.68965517241379	7	10
+GCN	Liver	Risperidone			58	0	5.68965517241379	7	10
+GCN	Liver	Ritonavir	2	58	116	0	5.20689655172414	6	10
+GCN	Liver	Rucaparib			58	0	4.55172413793104	5	8
+GCN	Liver	Salmeterol			58	0	5.68965517241379	7	10
+GCN	Liver	Saquinavir	2	58	116	0	5.20689655172414	6	10
+GCN	Liver	Solifenacin			58	0	5.68965517241379	7	10
+GCN	Liver	Spironolactone			58	0	5.68965517241379	7	10
+GCN	Liver	Sucralfate	3	58	174	0	4.79310344827586	6	10
+GCN	Liver	Tacrolimus	2	58	116	0	5.81034482758621	6	10
+GCN	Liver	Talazoparib			58	0	4.55172413793104	5	8
+GCN	Liver	Tamsulosin			58	0	5.68965517241379	7	10
+GCN	Liver	Telaprevir			58	0	5.68965517241379	7	10
+GCN	Liver	Tenecteplase	8	58	464	0	5.34698275862069	6	13
+GCN	Liver	Terbinafine	2	58	116	0	5.57758620689655	5	10
+GCN	Liver	Tetraferric tricitrate decahydrate	2	58	116	0	5.25862068965517	6	10
+GCN	Liver	Thalidomide	4	58	232	0	6.01724137931035	6	13
+GCN	Liver	Theophylline	2	58	116	0	5.58620689655172	6	11
+GCN	Liver	Thrombin	6	58	348	0	5.58045977011494	6	12
+GCN	Liver	Thrombin alfa	5	58	290	0	5.55172413793104	6	12
+GCN	Liver	Troglitazone	3	58	174	0	5.20689655172414	5	13
+GCN	Liver	Tromethamine	2	58	116	0	5.31034482758621	5	12
+GCN	Liver	Ulipristal			58	0	5.68965517241379	7	10
+GCN	Liver	Urokinase	3	58	174	0	5.7816091954023	5	13
+GCN	Liver	Valproic acid	2	58	116	3	5.88793103448276	6	13
+GCN	Liver	Vancomycin			58	0	5.68965517241379	7	10
+GCN	Liver	Vandetanib	4	58	232	0	5.13362068965517	5	10
+GCN	Liver	Vemurafenib	2	58	116	0	5.20689655172414	6	10
+GCN	Liver	Verapamil	2	58	116	0	5.20689655172414	6	10
+GCN	Liver	Vinflunine	2	58	116	0	5.71551724137931	6	10
+GCN	Liver	Vismodegib			58	0	5.68965517241379	7	10
+GCN	Liver	Warfarin			58	0	5.68965517241379	7	10
+GCN	Liver	Zinc	24	58	1392	0	5.38793103448276	5	12
+GCN	Liver	Zinc acetate	24	58	1392	0	5.38793103448276	5	12
+GCN	Liver	Zinc chloride	24	58	1392	0	5.48060344827586	5	12
+GCN	Liver	Ziprasidone	2	58	116	0	6.33620689655172	7	12
+GCN	Skeletal_muscle	Abciximab			30	0	4.7	4	9
+GCN	Skeletal_muscle	Adenosine phosphate			30	2	6.06666666666667	7	9
+GCN	Skeletal_muscle	Alemtuzumab	2	30	60	0	4.85	4	9
+GCN	Skeletal_muscle	alpha-Linolenic acid			30	2	6.96666666666667	8	10
+GCN	Skeletal_muscle	alpha-Tocopherol succinate	3	30	90	2	5.42222222222222	5	11
+GCN	Skeletal_muscle	Aluminium	2	30	60	0	6.36666666666667	6	12
+GCN	Skeletal_muscle	Aluminium phosphate	2	30	60	0	6.36666666666667	6	12
+GCN	Skeletal_muscle	Aluminum acetate	2	30	60	0	6.36666666666667	6	12
+GCN	Skeletal_muscle	Aminosalicylic acid			30	2	4.83333333333333	4	9
+GCN	Skeletal_muscle	Amrinone			30	2	6.06666666666667	7	9
+GCN	Skeletal_muscle	Antihemophilic factor, human recombinant	2	30	60	2	4.06666666666667	3	8
+GCN	Skeletal_muscle	Arsenic trioxide			30	3	4.56666666666667	4	6
+GCN	Skeletal_muscle	Asparagine			30	2	4.23333333333333	3.5	8
+GCN	Skeletal_muscle	Azathioprine	2	30	60	2	4.13333333333333	4	8
+GCN	Skeletal_muscle	Balsalazide			30	2	4.83333333333333	4	9
+GCN	Skeletal_muscle	Bevacizumab	5	30	150	0	4.76	4	9
+GCN	Skeletal_muscle	Bezafibrate			30	2	6.96666666666667	8	10
+GCN	Skeletal_muscle	Bosutinib	2	30	60	1	4.25	3.5	8
+GCN	Skeletal_muscle	Caffeine	4	30	120	2	5.125	5	10
+GCN	Skeletal_muscle	Cannabidiol			30	2	4.83333333333333	4	9
+GCN	Skeletal_muscle	Carvedilol			30	1	3.56666666666667	3.5	5
+GCN	Skeletal_muscle	Catumaxomab	2	30	60	0	4.85	4	9
+GCN	Skeletal_muscle	Cetuximab	5	30	150	0	4.76	4	9
+GCN	Skeletal_muscle	Cholecystokinin			30	1	4.66666666666667	4	9
+GCN	Skeletal_muscle	Citric acid	2	30	60	1	4.7	4	9
+GCN	Skeletal_muscle	Citrulline			30	2	5.1	4	9
+GCN	Skeletal_muscle	Clove oil			30	3	5.5	5	9
+GCN	Skeletal_muscle	Conjugated estrogens			30	1	4.66666666666667	4	9
+GCN	Skeletal_muscle	Copper	18	30	540	0	4.26481481481482	4	10
+GCN	Skeletal_muscle	D-alpha-Tocopherol acetate	2	30	60	2	4.15	4	9
+GCN	Skeletal_muscle	Dasatinib	4	30	120	2	4.66666666666667	4	11
+GCN	Skeletal_muscle	Deferoxamine			30	0	3.86666666666667	3	8
+GCN	Skeletal_muscle	Dexamethasone			30	2	4.16666666666667	4	8
+GCN	Skeletal_muscle	Dexibuprofen	2	30	60	0	4.9	5	9
+GCN	Skeletal_muscle	Dextromethorphan	4	30	120	0	4.73333333333333	4	9
+GCN	Skeletal_muscle	Diethylstilbestrol			30	1	4.66666666666667	4	9
+GCN	Skeletal_muscle	Dimercaprol			30	0	3.86666666666667	3	8
+GCN	Skeletal_muscle	Doxorubicin			30	1	6.86666666666667	8	10
+GCN	Skeletal_muscle	Drotrecogin alfa	2	30	60	0	4.35	4	8
+GCN	Skeletal_muscle	Erlotinib			30	1	4.66666666666667	4	9
+GCN	Skeletal_muscle	Estradiol acetate			30	1	4.66666666666667	4	9
+GCN	Skeletal_muscle	Estradiol benzoate			30	1	4.66666666666667	4	9
+GCN	Skeletal_muscle	Estradiol cypionate			30	1	4.66666666666667	4	9
+GCN	Skeletal_muscle	Estradiol dienanthate			30	1	4.66666666666667	4	9
+GCN	Skeletal_muscle	Estradiol valerate			30	1	4.66666666666667	4	9
+GCN	Skeletal_muscle	Estrone			30	1	4.66666666666667	4	9
+GCN	Skeletal_muscle	Etanercept	5	30	150	0	4.76	4	9
+GCN	Skeletal_muscle	Ethanol			30	1	4	3	8
+GCN	Skeletal_muscle	Fenofibric acid			30	2	6.96666666666667	8	10
+GCN	Skeletal_muscle	Ferrous ascorbate			30	2	3.73333333333333	3	7
+GCN	Skeletal_muscle	Ferrous fumarate			30	2	3.73333333333333	3	7
+GCN	Skeletal_muscle	Ferrous glycine sulfate			30	2	3.73333333333333	3	7
+GCN	Skeletal_muscle	Ferrous succinate			30	2	3.73333333333333	3	7
+GCN	Skeletal_muscle	Ferrous sulfate anhydrous	2	30	60	1	3.6	3	7
+GCN	Skeletal_muscle	Fingolimod			30	2	3.56666666666667	3	5
+GCN	Skeletal_muscle	Fish oil			30	2	6.96666666666667	8	10
+GCN	Skeletal_muscle	Florbetaben (18F)			30	0	3.86666666666667	3	8
+GCN	Skeletal_muscle	Florbetapir (18F)			30	0	3.86666666666667	3	8
+GCN	Skeletal_muscle	Fluocinolone acetonide			30	2	4.16666666666667	4	8
+GCN	Skeletal_muscle	Flutemetamol (18F)			30	0	3.86666666666667	3	8
+GCN	Skeletal_muscle	Foreskin fibroblast (neonatal)	3	30	90	1	3.83333333333333	3	8
+GCN	Skeletal_muscle	Foreskin keratinocyte (neonatal)	2	30	60	1	3.81666666666667	3	8
+GCN	Skeletal_muscle	Fostamatinib	17	30	510	1	4.46274509803922	4	11
+GCN	Skeletal_muscle	Glutamic acid			30	2	4.13333333333333	3.5	8
+GCN	Skeletal_muscle	Glutathione	2	30	60	2	4.03333333333333	3	8
+GCN	Skeletal_muscle	Glyburide			30	1	4.66666666666667	4	9
+GCN	Skeletal_muscle	Human calcitonin			30	0	4.2	4	8
+GCN	Skeletal_muscle	Human immunoglobulin G	3	30	90	0	4.58888888888889	4	9
+GCN	Skeletal_muscle	Hyaluronic acid			30	2	3.76666666666667	3	7
+GCN	Skeletal_muscle	Ibritumomab tiuxetan	6	30	180	0	4.49444444444444	4	9
+GCN	Skeletal_muscle	Ibuprofen	2	30	60	0	4.9	5	9
+GCN	Skeletal_muscle	Icosapent			30	2	6.96666666666667	8	10
+GCN	Skeletal_muscle	Indigotindisulfonic acid			30	2	3.53333333333333	3	7
+GCN	Skeletal_muscle	Insulin pork			30	2	4.16666666666667	3.5	8
+GCN	Skeletal_muscle	Iron			30	2	3.73333333333333	3	7
+GCN	Skeletal_muscle	Isopropyl alcohol			30	1	4.73333333333333	4	9
+GCN	Skeletal_muscle	L-Glutamine	2	30	60	1	4.48333333333333	4	9
+GCN	Skeletal_muscle	Lapatinib			30	3	6.16666666666667	7	9
+GCN	Skeletal_muscle	Lonoctocog alfa	2	30	60	2	4.06666666666667	3	8
+GCN	Skeletal_muscle	Mesalazine			30	2	4.83333333333333	4	9
+GCN	Skeletal_muscle	Midostaurin			30	2	3.86666666666667	3	8
+GCN	Skeletal_muscle	Minocycline			30	2	4.83333333333333	4	9
+GCN	Skeletal_muscle	Moroctocog alfa	2	30	60	2	4.06666666666667	3	8
+GCN	Skeletal_muscle	Muromonab	6	30	180	0	4.49444444444444	4	9
+GCN	Skeletal_muscle	NADH	2	30	60	1	4.3	4	8
+GCN	Skeletal_muscle	Naloxone			30	2	4.13333333333333	3	8
+GCN	Skeletal_muscle	Natalizumab	2	30	60	0	4.85	4	9
+GCN	Skeletal_muscle	Nefazodone			30	1	4.66666666666667	4	9
+GCN	Skeletal_muscle	Nicardipine			30	2	4	3	8
+GCN	Skeletal_muscle	Oleic Acid			30	2	6.96666666666667	8	10
+GCN	Skeletal_muscle	Omega-3 fatty acids			30	2	4.83333333333333	4	9
+GCN	Skeletal_muscle	Phosphatidyl serine			30	3	7.96666666666667	9	11
+GCN	Skeletal_muscle	Prasterone			30	1	4.66666666666667	4	9
+GCN	Skeletal_muscle	Promethazine	2	30	60	2	4.05	3	8
+GCN	Skeletal_muscle	Pyridoxal phosphate	2	30	60	1	5.68333333333333	6	11
+GCN	Skeletal_muscle	Regorafenib	3	30	90	2	4.6	4	9
+GCN	Skeletal_muscle	Rosiglitazone			30	2	6.96666666666667	8	10
+GCN	Skeletal_muscle	Sarilumab	2	30	60	0	4.85	4	9
+GCN	Skeletal_muscle	Sorafenib	2	30	60	2	4.78333333333333	5	9
+GCN	Skeletal_muscle	Sulfasalazine	2	30	60	1	4.75	4	9
+GCN	Skeletal_muscle	Telmisartan			30	2	4.16666666666667	3.5	8
+GCN	Skeletal_muscle	Tenecteplase			30	2	3.83333333333333	3	8
+GCN	Skeletal_muscle	Terazosin			30	2	4.2	3.5	8
+GCN	Skeletal_muscle	Theophylline			30	2	6.06666666666667	7	9
+GCN	Skeletal_muscle	Tinzaparin			30	0	5.13333333333333	6	8
+GCN	Skeletal_muscle	Tizanidine			30	3	5.13333333333333	5	8
+GCN	Skeletal_muscle	Tositumomab	5	30	150	0	4.76	4	9
+GCN	Skeletal_muscle	Trastuzumab	2	30	60	0	4.85	4	9
+GCN	Skeletal_muscle	Troglitazone			30	2	6.96666666666667	8	10
+GCN	Skeletal_muscle	Valproic acid	2	30	60	1	5.81666666666667	6	10
+GCN	Skeletal_muscle	Vitamin E	3	30	90	1	4.04444444444444	3.5	9
+GCN	Skeletal_muscle	Zanubrutinib			30	3	6.83333333333333	6	11
+GCN	Skeletal_muscle	Zinc	11	30	330	0	4.07878787878788	4	9
+GCN	Skeletal_muscle	Zinc acetate	11	30	330	0	4.07878787878788	4	9
+GCN	Skeletal_muscle	Zinc chloride	11	30	330	0	4.30606060606061	4	10
