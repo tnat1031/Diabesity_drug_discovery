@@ -3,17 +3,124 @@ title: "Proximity Null"
 output: html_notebook
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+# Goal
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+Generate null distributions of proximity scores against which we can compare the true proximity scores to generate z-scores and/or p-values. The null will be comprised of size-matched groups of genes with similar degree distribution as the genes in the true comparison. 
 
+# Setup
+
+## Libraries
 ```{r}
-plot(cars)
+# library(data.table)
+library(igraph)
+library(parallel)
+# our own custom functions
+source("functions.R")
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+## Data
+```{r}
+# inputs generated in Generate_Networks.Rmd
+inputs <- readRDS("inputs.rds")
+```
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+# Analysis
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+## Compute degree
+
+Compute the degree of each node within each background network and append those values to the inputs object.
+```{r}
+tissues <- names(inputs$PPI)
+for (x in tissues) {
+    ppi_deg <- degree(inputs$PPI[[x]]$background_network)
+    gcn_deg <- degree(inputs$GCN[[x]]$background_network)
+    # quick look at the distributions
+    hist(ppi_deg, main=paste("PPI", x), breaks=30)
+    hist(gcn_deg, main=paste("GCN", x), breaks=30)
+    inputs$PPI[[x]]$node_degree <- ppi_deg
+    inputs$GCN[[x]]$node_degree <- gcn_deg
+}
+
+```
+Looks like most are pretty low degree. 
+
+Let's see whether there is a difference in degree distribution between the genes in each disease and drug target list. If not, then we don't need to account for this when generating the null.
+```{r}
+(deg_test_disease <- rbindlist(sapply(tissues, function(x) {
+    compare_degree_distributions(inputs$PPI[[x]]$node_degree,
+                                 inputs$PPI[[x]]$disease_genes)
+    }, USE.NAMES = T, simplify = F),
+    idcol="tissue"))
+```
+
+The disease genes seem to have different degree distributions from the entire background network, especially by the Wilcox test (rs in the table above). I think this test may be the most appropriate given its non-parametric nature and that the underlying node degree distributions are not normally distributed. So this does suggest that to be safe, we should account for degree distribution when computing the null.
+
+Next we'll bin the nodes into buckets based on degree.
+```{r}
+# use one global set of breaks. I think this should be ok.
+# node with largest degree is 601
+# use small bin size for better precision
+breaks <- seq(0, 605, by=5) 
+for (x in tissues) {
+    inputs$PPI[[x]]$node_degree_binned <- cut(inputs$PPI[[x]]$node_degree,
+                                              breaks = breaks,
+                                              include.lowest = T)
+    inputs$GCN[[x]]$node_degree_binned <- cut(inputs$GCN[[x]]$node_degree,
+                                              breaks = breaks,
+                                              include.lowest = T)
+}
+```
+
+Then to generate the null, we'll need to sample in such a way that we accurately represent the degree distributions in the true gene lists. Do this for each network type and tissue separately.
+```{r}
+# first generate the sampled gene lists for disease genes
+# this can take ~30 mins
+set.seed(42)
+nperm <- 1e3
+networks <- c("PPI", "GCN")
+null_lists <- sapply(networks, function(x) {
+    sapply(tissues, function(y) {
+        deg <- inputs[[x]][[y]]$node_degree
+        deg_binned <- inputs[[x]][[y]]$node_degree_binned
+        disease_genes <- inputs[[x]][[y]]$disease_genes
+        disease_gene_lists <- lapply(1:nperm, function(i) {
+            sample_degree(deg, deg_binned, disease_genes)
+        })
+        drug_targets <- inputs[[x]][[y]]$drug_targets
+        drug_target_lists <- sapply(drug_targets, function(drug) {
+            lapply(1:nperm, function(i) {
+                sample_degree(deg, deg_binned, drug)
+            })
+        }, USE.NAMES = T, simplify = F)
+        return(list(disease_genes = disease_gene_lists,
+                    drug_targets = drug_target_lists))
+    }, USE.NAMES = T, simplify = F)
+}, USE.NAMES = T, simplify = F)
+# save this result
+saveRDS(null_lists, "null_lists.rds")
+```
+
+Now that we have the null gene lists, we can compute the null proximity scores. Note that this will take some time, even with parallelization.
+```{r}
+null_prox_matrix_list <- 
+    lapply(1:nperm, function(i) {
+        sapply(networks, function(network) {
+            sapply(tissues, function(tissue) {
+                bn <- inputs[[network]][[tissue]]$background_network
+                dg <- null_lists[[network]][[tissue]]$disease_genes[[i]]
+                # extract the ith null list for each drug
+                dt <- sapply(null_lists[[network]][[tissue]]$drug_targets,
+                             function(x) x[[i]])
+                tmp <- mclapply(dt, function(dt_genes) {
+                    prox_mat <- proximity_matrix(bn, dg, dt_genes)
+                }, mc.cores=4)
+                names(tmp) <- names(dt)
+                return(tmp)
+            }, USE.NAMES = T, simplify = F)
+    }, USE.NAMES = T, simplify = F)
+})
+# save this
+saveRDS(null_prox_matrix_list, "null_prox_matrix_list.rds")
+```
+
 

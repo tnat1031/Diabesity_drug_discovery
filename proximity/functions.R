@@ -46,3 +46,38 @@ summarize_prox_mat <- function(prox_mat) {
         max_prox = max(prox_mat, na.rm=T)
     )
 }
+
+# run a few comparisons to test differences b/w distributions
+compare_degree_distributions <- function(deg, gene_list) {
+    idx <- which(names(deg) %in% gene_list)
+    x <- deg[idx]
+    y <- deg[-idx]
+    ks <- ks.test(x, y)
+    tt <- t.test(x, y)
+    rs <- wilcox.test(x, y)
+    data.table(
+        ks_stat = ks$statistic,
+        ks_pval = ks$p.value,
+        t_stat = tt$statistic,
+        t_pval = tt$p.value,
+        rs_stat = rs$statistic,
+        rs_pval = rs$p.value
+    )
+}
+
+# sample from a background to reflect the degree distribution in a test gene list
+sample_degree <- function(deg, deg_binned, gene_list) {
+    n <- length(gene_list)
+    idx <- which(names(deg) %in% gene_list)
+    # how often does each bin occur in the gene list?
+    bin_freq <- table(deg_binned[idx])
+    bin_freq <- bin_freq[bin_freq > 0]
+    # for each non-zero entry, sample that number of genes from
+    # the corresponding bin
+    Reduce(c, lapply(names(bin_freq), function(x) {
+        freq <- bin_freq[[x]]
+        idx <- which(deg_binned==x)
+        sample(names(deg)[idx], freq, replace=F)
+    }))
+}
+
