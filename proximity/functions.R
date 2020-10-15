@@ -80,4 +80,3 @@ sample_degree <- function(deg, deg_binned, gene_list) {
         sample(names(deg)[idx], freq, replace=F)
     }))
 }
-
