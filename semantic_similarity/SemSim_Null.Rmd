@@ -87,17 +87,17 @@ saveRDS(null_res, "null_res_all_tissues_nperm_100_Jiang.rds")
 ```{r}
 # compute p-values
 cdf_list <- sapply(null_res, function(x) {
-    apply(x, 1, ecdf)
-}, USE.NAMES = T)
+  apply(x, 1, ecdf)
+}, USE.NAMES = T, simplify = F)
 
 pval_list <- sapply(tissues, function(x) {
-    this_res <- tissue_res[[x]]
-    sapply(names(this_res), function(drug) {
-        this_sem_sim <- this_res[[drug]]
-        this_cdf <- cdf_list[[x]][[drug]]
-        this_cdf(this_sem_sim)
-    }, USE.NAMES = T)
-}, USE.NAMES = T)
+  this_res <- tissue_res[[x]]
+  sapply(names(this_res), function(drug) {
+    this_sem_sim <- this_res[[drug]]
+    this_cdf <- cdf_list[[x]][[drug]]
+    this_cdf(this_sem_sim)
+  }, USE.NAMES = T)
+}, USE.NAMES = T, simplify = F)
 
 # save
 saveRDS(pval_list, "pval_lists_all_tissues_nperm_100_Jiang.rds")
