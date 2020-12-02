@@ -45,6 +45,12 @@ gene_lists <- sapply(up_drugs, function(x) {
 background_networks <- readRDS("background_networks.rds")
 ```
 
+```{r}
+# and inputs from prior analysis
+inputs <- readRDS("inputs.rds")
+```
+
+
 # Filter gene lists
 
 and save into an object we can use as input for downstream analysis
@@ -62,6 +68,7 @@ input_obj <- sapply(network_types, function(x) {
         filt <- filter_gene_lists(gene_lists, universe = universe)
         list(
             background_network = bn,
+            disease_genes = inputs[[x]][[y]]$disease_genes,
             gene_lists = filt
         )
     }, USE.NAMES = T, simplify = F)
