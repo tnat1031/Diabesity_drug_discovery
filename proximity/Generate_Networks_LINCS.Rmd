@@ -1,0 +1,76 @@
+---
+title: "Generate Networks"
+output: html_notebook
+---
+
+# Goal
+
+Use pre-computed background PPI and gene co-expression networks that have already been converted them to graph objects for analysis using drugbank gene lists. We'll reuse those same networks here with the LINCS gene sets. So, the only thing to do here is to filter the LINCS gene lists and generate an inputs object we can use for downstream analysis.
+
+
+# Setup
+
+## Libraries
+```{r}
+library(data.table)
+library(igraph)
+library(cmapR)
+# our own custom functions
+source("functions.R")
+```
+
+## Data
+
+```{r}
+# lincs gene lists as gmt files
+up_sets <- parse_gmt("../LINCS_gene_sets/gene_sets_up.gmt")
+dn_sets <- parse_gmt("../LINCS_gene_sets/gene_sets_dn.gmt")
+```
+
+```{r}
+# ignore the up/down direction and concatenate into a single list for each
+# drug
+up_drugs <- Reduce(c, lapply(up_sets, function(x) x$desc))
+dn_drugs <- Reduce(c, lapply(dn_sets, function(x) x$desc))
+identical(up_drugs, dn_drugs) # this is true, they are the same lists
+gene_lists <- sapply(up_drugs, function(x) {
+    idx <- which(up_drugs == x)
+    c(up_sets[[idx]]$entry, dn_sets[[idx]]$entry)
+}, USE.NAMES = T, simplify = F)
+```
+
+
+```{r}
+# pre-generated background networks
+background_networks <- readRDS("background_networks.rds")
+```
+
+# Filter gene lists
+
+and save into an object we can use as input for downstream analysis
+```{r}
+# filter each of the LINCS gene lists so that it contains
+# only genes in the graph object
+# need to do this for each tissue separately
+tissues <- unique(gsub("^PPI_|^GCN_", "", names(background_networks)))
+network_types <- c("PPI", "GCN")
+input_obj <- sapply(network_types, function(x) {
+    networks <- background_networks[grep(x, names(background_networks))]
+    gene_lists <- sapply(tissues, function(y) {
+        bn <- networks[[grep(y, names(networks))]]
+        universe <- names(V(bn))
+        filt <- filter_gene_lists(gene_lists, universe = universe)
+        list(
+            background_network = bn,
+            gene_lists = filt
+        )
+    }, USE.NAMES = T, simplify = F)
+}, USE.NAMES = T, simplify = F)
+```
+
+
+```{r}
+# save
+saveRDS(input_obj, "inputs_LINCS_backward_compat.rds", version = 2)
+```
+
