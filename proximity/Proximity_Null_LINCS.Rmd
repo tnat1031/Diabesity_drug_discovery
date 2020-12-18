@@ -1,0 +1,325 @@
+---
+title: "Proximity Null"
+output: html_notebook
+---
+
+# Goal
+
+Generate null distributions of proximity scores against which we can compare the true proximity scores to generate z-scores and/or p-values. The null will be comprised of size-matched groups of genes with similar degree distribution as the genes in the true comparison. 
+
+# Setup
+
+## Libraries
+```{r}
+# library(data.table)
+library(igraph)
+library(parallel)
+library(data.table)
+# our own custom functions
+source("functions.R")
+```
+
+## Data
+```{r}
+# inputs generated in Generate_Networks.Rmd
+inputs <- readRDS("inputs_LINCS_backward_compat.rds")
+```
+
+# Analysis
+
+## Compute degree
+
+Compute the degree of each node within each background network and append those values to the inputs object.
+```{r}
+tissues <- names(inputs$PPI)
+for (x in tissues) {
+    ppi_deg <- degree(inputs$PPI[[x]]$background_network)
+    gcn_deg <- degree(inputs$GCN[[x]]$background_network)
+    # quick look at the distributions
+    hist(ppi_deg, main=paste("PPI", x), breaks=30)
+    hist(gcn_deg, main=paste("GCN", x), breaks=30)
+    inputs$PPI[[x]]$node_degree <- ppi_deg
+    inputs$GCN[[x]]$node_degree <- gcn_deg
+}
+
+```
+Looks like most are pretty low degree. 
+
+Let's see whether there is a difference in degree distribution between the genes in each disease and drug target list. If not, then we don't need to account for this when generating the null.
+```{r}
+(deg_test_disease <- rbindlist(sapply(tissues, function(x) {
+    compare_degree_distributions(inputs$PPI[[x]]$node_degree,
+                                 inputs$PPI[[x]]$disease_genes)
+    }, USE.NAMES = T, simplify = F),
+    idcol="tissue"))
+```
+
+The disease genes seem to have different degree distributions from the entire background network, especially by the Wilcox test (rs in the table above). I think this test may be the most appropriate given its non-parametric nature and that the underlying node degree distributions are not normally distributed. So this does suggest that to be safe, we should account for degree distribution when computing the null.
+
+## Bin based on degree
+
+Next we'll bin the nodes into buckets based on degree.
+```{r}
+# use one global set of breaks. I think this should be ok.
+# node with largest degree is 601
+# use small bin size for better precision
+breaks <- seq(0, 605, by=5) 
+for (x in tissues) {
+    inputs$PPI[[x]]$node_degree_binned <- cut(inputs$PPI[[x]]$node_degree,
+                                              breaks = breaks,
+                                              include.lowest = T)
+    inputs$GCN[[x]]$node_degree_binned <- cut(inputs$GCN[[x]]$node_degree,
+                                              breaks = breaks,
+                                              include.lowest = T)
+}
+```
+
+
+## Generate random gene lists
+
+Then to generate the null, we'll need to sample in such a way that we accurately represent the degree distributions in the true gene lists. Do this for each network type and tissue separately.
+```{r}
+# first generate the sampled gene lists for disease genes
+# this can take ~30 mins
+set.seed(42)
+nperm <- 1e3
+networks <- c("PPI", "GCN")
+null_lists <- sapply(networks, function(x) {
+    sapply(tissues, function(y) {
+        deg <- inputs[[x]][[y]]$node_degree
+        deg_binned <- inputs[[x]][[y]]$node_degree_binned
+        disease_genes <- inputs[[x]][[y]]$disease_genes
+        disease_gene_lists <- lapply(1:nperm, function(i) {
+            sample_degree(deg, deg_binned, disease_genes)
+        })
+        drug_targets <- inputs[[x]][[y]]$gene_lists
+        drug_target_lists <- sapply(drug_targets, function(drug) {
+            lapply(1:nperm, function(i) {
+                sample_degree(deg, deg_binned, drug)
+            })
+        }, USE.NAMES = T, simplify = F)
+        return(list(disease_genes = disease_gene_lists,
+                    gene_lists = drug_target_lists))
+    }, USE.NAMES = T, simplify = F)
+}, USE.NAMES = T, simplify = F)
+# save this result
+saveRDS(null_lists, "null_lists_LINCS_backward_compat.rds", version=2)
+```
+
+## Compute null proximities
+
+Now that we have the null gene lists, we can compute the null proximity scores. Note that this will take some time, even with parallelization.
+```{r}
+# null_prox_matrix_list <- 
+#     lapply(1:nperm, function(i) {
+#         sapply(networks, function(network) {
+#             sapply(tissues, function(tissue) {
+#                 bn <- inputs[[network]][[tissue]]$background_network
+#                 dg <- null_lists[[network]][[tissue]]$disease_genes[[i]]
+#                 # extract the ith null list for each drug
+#                 dt <- sapply(null_lists[[network]][[tissue]]$drug_targets,
+#                              function(x) x[[i]])
+#                 tmp <- mclapply(dt, function(dt_genes) {
+#                     prox_mat <- proximity_matrix(bn, dg, dt_genes)
+#                 }, mc.cores=12)
+#                 names(tmp) <- names(dt)
+#                 return(tmp)
+#             }, USE.NAMES = T, simplify = F)
+#     }, USE.NAMES = T, simplify = F)
+# })
+# # save this
+# saveRDS(null_prox_matrix_list, "null_prox_matrix_list.rds")
+```
+
+--- NOTE THIS SECTION IN FLUX DUE TO TIME COMPLEXITY ---
+NB: might want to restrict to those drugs for which we have drugbank data, at least at the outset. Otherwise this will take forever to run all the drugs.
+
+```{r}
+# before computing, restrict only to drugs with data from drugbank
+inputs_drug_bank <- readRDS("inputs.rds")
+drugbank_drugs <- Reduce(union, lapply(inputs_drug_bank, function(network) {
+    Reduce(union, lapply(network, function(tissue) {
+        tolower(names(tissue$drug_targets))
+    }))
+}))
+str(drugbank_drugs)
+```
+
+```{r}
+inputs <- readRDS("inputs_LINCS_backward_compat.rds")
+inputs_filt <- sapply(inputs, function(network) {
+    sapply(network, function(tissue) {
+        obj <- tissue
+        idx <- which(tolower(names(obj$gene_lists)) %in% drugbank_drugs)
+        obj$gene_lists <- obj$gene_lists[idx]
+        return(obj)
+    }, USE.NAMES = T, simplify = F)
+}, USE.NAMES = T, simplify = F)
+```
+
+```{r}
+saveRDS(inputs_filt, "inputs_LINCS_backward_compat_drugbank_filtered.rds", version=2)
+```
+
+```{r}
+null_lists_filt <- sapply(null_lists, function(network) {
+    sapply(network, function(tissue) {
+        obj <- tissue
+        idx <- which(tolower(names(obj$gene_lists)) %in% drugbank_drugs)
+        obj$gene_lists <- obj$gene_lists[idx]
+        return(obj)
+    }, USE.NAMES = T, simplify = F)
+}, USE.NAMES = T, simplify = F)
+```
+
+```{r}
+saveRDS(null_lists_filt, "null_lists_LINCS_backward_compat_drugbank_filtered.rds", version=2)
+```
+
+```{r}
+# refactor to run each network/tissue on its own and save the intermediate results
+# null_lists should be null_lists_filt_from above
+nperm <- 1e3
+chunk_size <- 100
+networks <- c("PPI", "GCN")
+# tissues <- names(inputs$PPI)
+tissues <- c("Adipose_visceral", "Liver", "Skeletal_muscle")
+for (network in networks) {
+    for (tissue in tissues) { # edited to skip completed tissues
+        # running out of memory at intermediaate steps,
+        # so save the results in chunks
+        chunks <- roller::chunk_vector(seq_len(nperm), chunk_size)
+        for (y in seq_along(chunks)) { # 
+            res <- lapply(chunks[[y]], function(i) {
+                message(sprintf("%s %s chunk %d iter %d", network, tissue, y, i))
+                bn <- inputs[[network]][[tissue]]$background_network
+                dg <- null_lists[[network]][[tissue]]$disease_genes[[i]]
+                # extract the ith null list for each drug
+                dt <- sapply(null_lists[[network]][[tissue]]$gene_lists,
+                             function(x) x[[i]])
+                tmp <- mclapply(dt, function(dt_genes) {
+                    prox_mat <- proximity_matrix(bn, dg, dt_genes)
+                }, mc.cores=20)
+                names(tmp) <- names(dt)
+                return(tmp)
+            })
+            ofile <- sprintf("null_matrices_LINCS_%s_%s_chunk_%d.rds", network, tissue, y)
+            saveRDS(res, ofile, version=2)
+            rm(res)
+            gc()
+        }
+    }
+}
+```
+
+## Aggregate null proximites
+
+Because the computations are taking so long, we're running each network type/tissue combination on its own and saving the results as an individual .rds file. So we'll need to load each of these and aggregate individually, then collate the results.
+
+Some of the null matrices were run in a chunked fashion, so we'll want to collate those first. The goal will be to have a single .rds file for each tissue / network type. This is an intermediate step that just to organize the files.
+```{r}
+chunked_files <- list.files("null_matrix_chunks_LINCS", pattern="chunk.*\\.rds", full.names=T)
+f <- gsub("_chunk_.*\\.rds", "", basename(chunked_files))
+# f <- gsub("null_matrices_", "", f)
+grp <- split(chunked_files, f)
+```
+
+```{r}
+for (x in names(grp)) {
+    message(x)
+    files <- grp[[x]]
+    collated <- Reduce(c, lapply(files, readRDS))
+    saveRDS(collated, sprintf("%s.rds", x))
+}
+```
+
+```{r}
+# PPI skeletal muscle files are large, need to handle separately
+sk1 <- Reduce(c, lapply(grp$null_matrices_PPI_Skeletal_muscle[1:5], readRDS))
+saveRDS(sk1, "null_matrices_PPI_Skeletal_muscle_1.rds")
+rm(sk1)
+gc()
+sk2 <- Reduce(c, lapply(grp$null_matrices_PPI_Skeletal_muscle[6:10], readRDS))
+saveRDS(sk2, "null_matrices_PPI_Skeletal_muscle_2.rds")
+rm(sk2)
+gc()
+```
+
+
+```{r}
+# null_prox_matrix_list <- list(
+#     PPI = list(),
+#     GCN = list()
+# )
+# null_prox_matrix_list$PPI[["Adipose_subcutaneous"]] <-
+#     readRDS("null_matrices_PPI_Adipose_subcutaneous.rds")
+```
+
+Summarize by computing some aggregate stats on each individual proximity matrix. Need to do this on each .rds file separately due to memory constraints.
+
+```{r}
+null_files <- list.files(pattern="null_matrices_LINCS", full.names = T)
+```
+
+```{r}
+# NB these completed without modification - add them to list so we can skip
+done <- c()
+for (nf in setdiff(null_files, done)) {
+    message(nf)
+    res <- readRDS(nf)
+    agg <- sapply(res, function(perm) {
+            # each tissue has a list of 1,000 permutations,
+            # where each permutation is a list of matrices, one per drug
+            sapply(perm, function(drug) {
+                summarize_prox_mat(drug)
+            }, simplify = F)
+        }, USE.NAMES = T, simplify = F)
+    df <- rbindlist(lapply(agg, rbindlist, idcol="drug"))
+    # save the text file
+    fname <- gsub("null_matrices_", "aggregated_", basename(nf))
+    fname <- gsub("\\.rds$", "\\.txt", fname)
+    fwrite(df, fname, sep="\t")
+    rm(res)
+    gc()
+    # track those that are done
+    done <- c(done, nf)
+}
+```
+
+Collate all summarized stats for a given network / tissue / drug combination.
+Here we want a data.frame that has all the iterations for every network / tissue / drug combination. We can then compute whatever aggregate stats we like on that. We can get this by collating the aggregated_* text files generated in the previous step.
+
+```{r}
+agg_files <- list.files(pattern="^aggregated_LINCS.*\\.txt$", full.names=T)
+null_prox_df <- rbindlist(lapply(agg_files, function(x) {
+    fname <- gsub("^aggregated_", "", basename(x))
+    fname <- gsub("_[0-9]\\.txt$", "", fname)
+    fname <- gsub("\\.txt$", "", fname)
+    parts <- unlist(strsplit(fname, "_"))
+    network <- parts[2]
+    tissue <- paste(parts[-(1:2)], collapse="_")
+    message(paste(network, tissue))
+    tmp <- fread(x)
+    tmp$network <- network
+    tmp$tissue <- tissue
+    return(tmp)
+}))
+# wrap up 
+fwrite(null_prox_df, "null_prox_LINCS_aggregated.txt", sep="\t")
+```
+
+Let's take a look at the distribution of mean_prox
+```{r}
+hist(null_prox_df$mean_prox)
+```
+Looks pretty normal shaped, which is good. Should be appropriate for z-scoring.
+
+Compute some aggregate stats on the null distributions of mean_prosx. We need the mean and standard deviation so we can then compute z-scores
+```{r}
+null_prox_stats <- null_prox_df[, .(mean_prox = mean(mean_prox),
+                                    sd_prox = sd(mean_prox)),
+                                .(network, tissue, drug)]
+# save
+fwrite(null_prox_stats, "null_prox_LINCS_stats_for_zscore.txt", sep="\t")
+```
+

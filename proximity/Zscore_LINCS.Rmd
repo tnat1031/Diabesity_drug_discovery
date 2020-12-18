@@ -1,0 +1,132 @@
+---
+title: "Zscore"
+output: html_notebook
+---
+
+# Goal
+
+Compute z-scores from proximity scores and null distributions. Could possibly also generate a network visualization by thresholding z-scores.
+
+# Setup
+
+## Libraries
+```{r}
+library(data.table)
+library(igraph)
+library(ggplot2)
+library(ggrepel)
+# library(parallel)
+# our own custom functions
+source("functions.R")
+```
+
+## Inputs
+```{r}
+# actual proximity scores
+prox_df <- fread("proximity_scores_LINCS.txt")
+
+# aggregated null stats
+null_prox_df <- fread("null_prox_LINCS_stats_for_zscore.txt")
+```
+
+```{r}
+# join
+prox_merged <- merge(prox_df, null_prox_df,
+                     by.x=c("assoc_type", "tissue", "drug"),
+                     by.y=c("network", "tissue", "drug"),
+                     suffixes = c("_actual", "_null"))
+dim(prox_merged)
+```
+
+# Analysis
+
+## z-scores (relative proximity)
+```{r}
+# compute z-scores
+prox_merged[, prox_zs := (mean_prox_actual - mean_prox_null) / sd_prox,
+            .(assoc_type, tissue, drug)]
+```
+
+```{r}
+# save
+fwrite(prox_merged, "proximity_zscores_LINCS.txt", sep="\t")
+```
+
+
+```{r}
+# look at distribution by network, tissue type
+ggplot(prox_merged, aes(x=prox_zs)) +
+    geom_histogram() +
+    xlab("proximity z-score") +
+    ylab("frequency") +
+    facet_wrap(vars(assoc_type, tissue), scales="free_y")
+```
+Seems to have a longer negative tail, suggesting that there are some drug-gene proximities that are closer than you'd observe based on random chance. This is good.
+
+```{r}
+# look at the strongest associations
+prox_merged <- prox_merged[order(prox_zs, decreasing=F)]
+# prox_merged$tmp <- seq_len(nrow(prox_merged))
+prox_merged[, tmp := seq_len(.N), .(assoc_type, tissue)]
+p <- ggplot(prox_merged,
+       aes(x=tmp, y=prox_zs)) +
+    geom_point() +
+    geom_label_repel(aes(label=drug), data=prox_merged[tmp <= 5]) +
+    xlab("drugs") +
+    ylab("proximity z-score") +
+    facet_wrap(vars(assoc_type, tissue), scales="free")
+# save as a PDF so we have more control over size
+pdf("prox_zs_top5_LINCS.pdf", height=8.5, width=11)
+print(p)
+dev.off()
+```
+
+
+## Network viz
+
+Visualize the significant associations in the background network by thresholding the z-scores.
+```{r}
+# get inputs object, which contains background networks
+# and gene lists
+inputs <- readRDS("inputs_LINCS_backward_compat_drugbank_filtered.rds")
+```
+
+
+```{r}
+# get all vertices from network
+verts <- V(inputs$PPI$Adipose_subcutaneous$background_network)
+```
+
+Let's look at the subnetwork for a given compound and disease genes
+```{r}
+cp <- prox_merged[which.min(prox_zs)]$drug
+drug_targets <- inputs$PPI$Adipose_subcutaneous$gene_lists[[cp]]
+disease_genes <- inputs$PPI$Adipose_subcutaneous$disease_genes
+cp_idx <- which(names(verts) %in% drug_targets)
+dx_idx <- which(names(verts) %in% disease_genes)
+# extract a subgraph with these vertices plus nearest neighbors for context
+vidx <- c(verts[cp_idx, .nei(1)], verts[dx_idx, .nei(1)])
+subg <- induced_subgraph(inputs$PPI$Adipose_subcutaneous$background_network, vidx)
+```
+
+```{r}
+# make the plot
+vcol <- rep("gray", length(vidx))
+vcol[names(vidx) %in% drug_targets] <- "red"
+vcol[names(vidx) %in% disease_genes] <- "blue"
+vlab <- names(vidx)
+vlab[!vlab %in% union(drug_targets, disease_genes)] <- ""
+plot(subg,
+     vertex.label=vlab,
+     vertex.label.cex=0.5,
+     vertex.label.dist=1,
+     vertex.label.color="black",
+     vertex.color=vcol,
+     vertex.size=8,
+     main=cp,
+     sub="Adipose_subcutaneous")
+legend("bottomleft", legend = c("drug target", "disease gene"),
+       col=c("red", "blue"), pch=19)
+```
+
+

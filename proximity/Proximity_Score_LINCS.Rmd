@@ -1,0 +1,85 @@
+---
+title: "Proximity Score"
+output: html_notebook
+---
+
+# Goal
+
+Compute proximities between disease and drug gene lists, using the the interactome graph object. 
+
+# Setup
+
+## Libraries
+```{r}
+# library(data.table)
+library(igraph)
+library(parallel)
+library(data.table)
+# our own custom functions
+source("functions.R")
+```
+
+## Data
+```{r}
+# inputs from Generate_Networks.Rmd
+inputs <- readRDS("inputs_LINCS_backward_compat.rds")
+```
+
+# Analysis
+
+## Generate proximity matrices
+
+Within each tissue, for each diease gene list and each drug, compute the proximity score for each pair of genes. This will result in a matrix of disease genes x drug targets where each value is a proximity score. Note this will take some time, even with parallelization.
+```{r}
+prox_matrix_list <- sapply(inputs, function(assoc_type) {
+    sapply(assoc_type, function(tissue) {
+        bn <- tissue$background_network
+        dg <- tissue$disease_genes
+        dt <- tissue$gene_lists
+        tmp <- mclapply(dt, function(dt_genes) {
+            prox_mat <- proximity_matrix(bn, dg, dt_genes)
+        }, mc.cores=4)
+        names(tmp) <- names(dt)
+        return(tmp)
+    }, USE.NAMES = T, simplify = F)
+}, USE.NAMES = T, simplify = F)
+```
+
+```{r}
+# save this
+saveRDS(prox_matrix_list, "prox_matrix_list_LINCS.rds")
+```
+
+
+## Aggregate
+
+Compute aggregate measures of proximity within each matrix, as described in Guney et al 2015 Nat. Comm. and wrap into a data.table.
+
+```{r}
+prox_matrix_list <- readRDS("prox_matrix_list_LINCS.rds")
+```
+
+
+```{r}
+# apply summary function
+prox_matrix_summ <- sapply(prox_matrix_list, function(assoc_type) {
+    sapply(assoc_type, function(tissue) {
+        sapply(tissue, function(drug) {
+            summarize_prox_mat(drug)
+        }, USE.NAMES = T, simplify = F)
+    }, USE.NAMES = T, simplify = F)
+}, USE.NAMES = T, simplify = F)
+```
+
+```{r}
+# wrap up
+ppi_df <- rbindlist(lapply(prox_matrix_summ$PPI, rbindlist, idcol="drug"), idcol="tissue")
+gcn_df <- rbindlist(lapply(prox_matrix_summ$GCN, rbindlist, idcol="drug"), idcol="tissue")
+prox_df <- rbindlist(list(PPI=ppi_df, GCN=gcn_df), idcol="assoc_type")
+```
+
+```{r}
+# save
+fwrite(prox_df, "proximity_scores_LINCS.txt", sep="\t")
+```
+
