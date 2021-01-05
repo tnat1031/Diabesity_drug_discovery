@@ -181,9 +181,10 @@ saveRDS(null_lists_filt, "null_lists_LINCS_backward_compat_drugbank_filtered.rds
 # null_lists should be null_lists_filt_from above
 nperm <- 1e3
 chunk_size <- 100
-networks <- c("PPI", "GCN")
-# tissues <- names(inputs$PPI)
-tissues <- c("Adipose_visceral", "Liver", "Skeletal_muscle")
+# networks <- c("PPI", "GCN")
+networks <- "GCN"
+tissues <- names(inputs$PPI)
+# tissues <- c("Skeletal_muscle", "Liver")
 for (network in networks) {
     for (tissue in tissues) { # edited to skip completed tissues
         # running out of memory at intermediaate steps,
@@ -212,13 +213,15 @@ for (network in networks) {
 }
 ```
 
+Ran into memory issues for the PPI skeletal muscle and liver tissues, but still was able to generate backgrounds of 400 and 600 permutations, respectively. I think this will still be usable.
+
 ## Aggregate null proximites
 
 Because the computations are taking so long, we're running each network type/tissue combination on its own and saving the results as an individual .rds file. So we'll need to load each of these and aggregate individually, then collate the results.
 
 Some of the null matrices were run in a chunked fashion, so we'll want to collate those first. The goal will be to have a single .rds file for each tissue / network type. This is an intermediate step that just to organize the files.
 ```{r}
-chunked_files <- list.files("null_matrix_chunks_LINCS", pattern="chunk.*\\.rds", full.names=T)
+chunked_files <- list.files("null_matrix_chunks_LINCS", pattern="GCN.*\\.rds", full.names=T)
 f <- gsub("_chunk_.*\\.rds", "", basename(chunked_files))
 # f <- gsub("null_matrices_", "", f)
 grp <- split(chunked_files, f)
@@ -233,32 +236,10 @@ for (x in names(grp)) {
 }
 ```
 
-```{r}
-# PPI skeletal muscle files are large, need to handle separately
-sk1 <- Reduce(c, lapply(grp$null_matrices_PPI_Skeletal_muscle[1:5], readRDS))
-saveRDS(sk1, "null_matrices_PPI_Skeletal_muscle_1.rds")
-rm(sk1)
-gc()
-sk2 <- Reduce(c, lapply(grp$null_matrices_PPI_Skeletal_muscle[6:10], readRDS))
-saveRDS(sk2, "null_matrices_PPI_Skeletal_muscle_2.rds")
-rm(sk2)
-gc()
-```
-
-
-```{r}
-# null_prox_matrix_list <- list(
-#     PPI = list(),
-#     GCN = list()
-# )
-# null_prox_matrix_list$PPI[["Adipose_subcutaneous"]] <-
-#     readRDS("null_matrices_PPI_Adipose_subcutaneous.rds")
-```
-
 Summarize by computing some aggregate stats on each individual proximity matrix. Need to do this on each .rds file separately due to memory constraints.
 
 ```{r}
-null_files <- list.files(pattern="null_matrices_LINCS", full.names = T)
+(null_files <- list.files(pattern="null_matrices_LINCS_.+\\.rds", full.names = T))
 ```
 
 ```{r}

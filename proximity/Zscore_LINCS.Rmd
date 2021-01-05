@@ -59,9 +59,10 @@ ggplot(prox_merged, aes(x=prox_zs)) +
     geom_histogram() +
     xlab("proximity z-score") +
     ylab("frequency") +
-    facet_wrap(vars(assoc_type, tissue), scales="free_y")
+    facet_grid(assoc_type ~ tissue, scales="free_y") +
+    geom_vline(xintercept = 0, linetype="dashed", color="red")
 ```
-Seems to have a longer negative tail, suggesting that there are some drug-gene proximities that are closer than you'd observe based on random chance. This is good.
+Seems to have a longer negative tail, suggesting that there are some drug-gene proximities that are closer than you'd observe based on random chance. This is good. The Liver and 
 
 ```{r}
 # look at the strongest associations
@@ -74,7 +75,7 @@ p <- ggplot(prox_merged,
     geom_label_repel(aes(label=drug), data=prox_merged[tmp <= 5]) +
     xlab("drugs") +
     ylab("proximity z-score") +
-    facet_wrap(vars(assoc_type, tissue), scales="free")
+    facet_grid(assoc_type ~ tissue, scales="free_y")
 # save as a PDF so we have more control over size
 pdf("prox_zs_top5_LINCS.pdf", height=8.5, width=11)
 print(p)
@@ -83,6 +84,8 @@ dev.off()
 
 
 ## Network viz
+
+*NB* update to make more flexible for an arbitrary compound, or show the best compound from each network.
 
 Visualize the significant associations in the background network by thresholding the z-scores.
 ```{r}
@@ -94,19 +97,19 @@ inputs <- readRDS("inputs_LINCS_backward_compat_drugbank_filtered.rds")
 
 ```{r}
 # get all vertices from network
-verts <- V(inputs$PPI$Adipose_subcutaneous$background_network)
+verts <- V(inputs$PPI$Adipose_visceral$background_network)
 ```
 
 Let's look at the subnetwork for a given compound and disease genes
 ```{r}
-cp <- prox_merged[which.min(prox_zs)]$drug
-drug_targets <- inputs$PPI$Adipose_subcutaneous$gene_lists[[cp]]
-disease_genes <- inputs$PPI$Adipose_subcutaneous$disease_genes
+cp <- prox_merged[tissue=="Adipose_visceral"][which.min(prox_zs)]$drug
+drug_targets <- inputs$PPI$Adipose_visceral$gene_lists[[cp]]
+disease_genes <- inputs$PPI$Adipose_visceral$disease_genes
 cp_idx <- which(names(verts) %in% drug_targets)
 dx_idx <- which(names(verts) %in% disease_genes)
 # extract a subgraph with these vertices plus nearest neighbors for context
 vidx <- c(verts[cp_idx, .nei(1)], verts[dx_idx, .nei(1)])
-subg <- induced_subgraph(inputs$PPI$Adipose_subcutaneous$background_network, vidx)
+subg <- induced_subgraph(inputs$PPI$Adipose_visceral$background_network, vidx)
 ```
 
 ```{r}
@@ -124,7 +127,7 @@ plot(subg,
      vertex.color=vcol,
      vertex.size=8,
      main=cp,
-     sub="Adipose_subcutaneous")
+     sub="Adipose_visceral")
 legend("bottomleft", legend = c("drug target", "disease gene"),
        col=c("red", "blue"), pch=19)
 ```
