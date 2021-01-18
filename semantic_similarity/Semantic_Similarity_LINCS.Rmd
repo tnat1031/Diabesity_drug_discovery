@@ -1,0 +1,190 @@
+---
+title: "Semantic Similarity"
+output: html_notebook
+---
+
+# Overview
+
+The objective of this analysis is to compute the semantic similarity between tissue-specific lists of drug targets and disease genes. We'll do this using the R package [GOSemSim](https://bioconductor.org/packages/devel/bioc/vignettes/GOSemSim/inst/doc/GOSemSim.html#gene-semantic-similarity-measurement). And the corresponding paper [here.](https://academic.oup.com/bioinformatics/article/26/7/976/213143). Wang's similarity method, which I've chosen to use, is explained [here.](https://academic.oup.com/bioinformatics/article/23/10/1274/197095#1953560)
+
+# Setup
+
+## Libraries
+```{r}
+library(AnnotationHub)
+library(GOSemSim)
+library(data.table)
+library(cmapR)
+library(parallel)
+library(ggplot2)
+library(ggrepel)
+source("functions.R")
+```
+
+```{r}
+# make sure org.Hs.eg.db annotation package is installed, as GOSemSim needs
+# this to compute similarities
+if (!require(org.Hs.eg.db)) {
+    BiocManager::install("org.Hs.eg.db")
+    library(org.Hs.eg.db)
+}
+```
+
+## Ontology
+
+Restrict ontology to molecular functions. From the paper above:
+
+"The GO used in measurement can be restricted by assigning the corresponding parameter to 'BP' (biological process), 'MF' (molecular function) and 'CC' (cellular component)."
+
+```{r}
+# Initialize a GOSemSimDATA object to contain the GO term to symbol mapping
+hsGO <- godata('org.Hs.eg.db', ont="MF", keytype = "SYMBOL")
+```
+
+
+## Inputs
+
+```{r}
+# read from previously saved inputs object created in 'SemSim_Timing.Rmd'
+inputs <- readRDS("inputs.rds")
+```
+
+### Update to include LINCS gene lists instead of drug bank lists
+
+```{r}
+# lincs gene lists as gmt files
+up_sets <- parse_gmt("~/work/Subhajit/LINCS_gene_sets/gene_sets_up.gmt")
+dn_sets <- parse_gmt("~/work/Subhajit/LINCS_gene_sets/gene_sets_dn.gmt")
+```
+
+```{r}
+# ignore the up/down direction and concatenate into a single list for each
+# drug
+up_drugs <- Reduce(c, lapply(up_sets, function(x) x$desc))
+dn_drugs <- Reduce(c, lapply(dn_sets, function(x) x$desc))
+identical(up_drugs, dn_drugs) # this is true, they are the same lists
+gene_lists <- sapply(up_drugs, function(x) {
+    idx <- which(up_drugs == x)
+    c(up_sets[[idx]]$entry, dn_sets[[idx]]$entry)
+}, USE.NAMES = T, simplify = F)
+```
+
+```{r}
+inputs$drug_targets <- NULL
+inputs$gene_lists <- gene_lists
+```
+
+```{r}
+# save
+saveRDS(inputs, "inputs_LINCS_backward_compat.rds", ver=2)
+```
+
+```{r}
+# and make a filtered version containing only those drugs that have drugbank data
+# can use the proximity inputs to help with this
+prox_inputs <- readRDS("../proximity/inputs_LINCS_backward_compat_drugbank_filtered.rds")
+drug_bank_drugs <- names(prox_inputs$PPI$Liver$gene_lists)
+inputs_filt <- inputs
+inputs_filt$gene_lists <- inputs$gene_lists[drug_bank_drugs]
+```
+
+```{r}
+# save
+saveRDS(inputs_filt, "inputs_LINCS_backward_compat_drugbank_filtered.rds", ver=2)
+```
+
+# Computation
+
+## Sanity check
+
+As a sanity check, let's compute the similarity between the target lists for all the drugs in a given tissue. We should observe that drugs with similar mechanism cluster together.
+```{r}
+simtest <- mclusterSim(inputs$drug_targets$Commonly_expressed,
+                       semData=hsGO, measure="Jiang")
+d <- as.dist(1 - simtest)
+hc <- hclust(d)
+plot(hc)
+```
+Ok, this looks good. The estradiols, glitazones, and heavy metal drugs all form their own clusters.
+
+## Drug to disease gene lists
+
+We'll compute the similarity between each drug list and each tissue gene list, and wrap up the results into a matrix. Note that this takes a while, so one may want to simply load the .rds file with the results if available. For Windows users, mc.cores = 1 can be used. 
+```{r}
+tissues <- names(inputs$disease_genes)
+tissue_res <- lapply(tissues, function(x) {
+    disease_list <- inputs$disease_genes[[x]]
+    drug_lists <- inputs$gene_lists
+    disease_drug_sim(disease_list, drug_lists, semData=inputs$hsGO, measure="Jiang")
+})
+names(tissue_res) <- tissues
+```
+
+```{r}
+# save since this took a while
+saveRDS(tissue_res, "tissue_res_Jiang_LINCS.rds")
+```
+
+
+----- This is after the null has been run ------
+
+Read in p-values and collate into a table for each tissue.
+```{r}
+pval_list <- readRDS("pval_lists_all_tissues_nperm_100_Jiang.rds")
+```
+
+```{r}
+tissue_tables <- sapply(tissues, function(x) {
+    res <- tissue_res[[x]]
+    pvals <- pval_list[[x]]
+    idx1 <- match(names(res), names(pvals))
+    idx2 <- match(names(res), names(tissue_res_Jiang$drug_targets[[x]]))
+    data.table(drug = names(res),
+               # number of genes in the disease and drug lists
+               ngene_disease = length(tissue_res_Jiang$disease_genes[[x]]),
+               ngene_drug = lengths(tissue_res_Jiang$drug_targets[[x]][idx2]),
+               semsim = res,
+               pval = pvals[idx1])
+}, USE.NAMES = T, simplify = F)
+```
+
+```{r}
+# plot score vs. p-value for each tissue
+for (x in tissues) {
+    tmp <- tissue_tables[[x]]
+    p <- ggplot(tmp, aes(x=semsim, y=pval)) +
+        scale_y_reverse() +
+        geom_point() +
+        ggtitle(x)
+        # geom_label_repel(aes(label=drug), data=tmp[pval <= 0.05])
+    print(p)
+}
+```
+
+
+Collate into a single large table. Include NA values for drugs that did not have a gene signature in a given tissue.
+```{r}
+# update column names so we can merge
+names_to_change <- c("semsim", "pval", "ngene_disease", "ngene_drug")
+for (x in tissues) {
+    setnames(tissue_tables[[x]], names_to_change,
+             paste(x, names_to_change, sep="_"))
+}
+```
+
+```{r}
+# merge them all together, keeping all entries from each table (all = T)
+res_df <- Reduce(function(x, y) {
+    merge(x, y, all=T)
+}, tissue_tables)
+```
+
+```{r}
+# save
+fwrite(res_df, "results_table_collated_nperm_100_Jiang.txt", sep="\t")
+```
+
+
+
+
+
