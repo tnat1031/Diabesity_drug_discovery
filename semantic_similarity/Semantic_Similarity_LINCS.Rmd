@@ -115,7 +115,8 @@ tissues <- names(inputs$disease_genes)
 tissue_res <- lapply(tissues, function(x) {
     disease_list <- inputs$disease_genes[[x]]
     drug_lists <- inputs$gene_lists
-    disease_drug_sim(disease_list, drug_lists, semData=inputs$hsGO, measure="Jiang")
+    disease_drug_sim(disease_list, drug_lists, semData=hsGO, measure="Jiang", # inputs$hsGO
+                     mc.cores=1)
 })
 names(tissue_res) <- tissues
 ```
@@ -130,7 +131,7 @@ saveRDS(tissue_res, "tissue_res_Jiang_LINCS.rds")
 
 Read in p-values and collate into a table for each tissue.
 ```{r}
-pval_list <- readRDS("pval_lists_all_tissues_nperm_100_Jiang.rds")
+pval_list <- readRDS("pval_lists_all_tissues_nperm_100_Jiang_LINCS_drugbank_filtered.rds")
 ```
 
 ```{r}
@@ -138,11 +139,11 @@ tissue_tables <- sapply(tissues, function(x) {
     res <- tissue_res[[x]]
     pvals <- pval_list[[x]]
     idx1 <- match(names(res), names(pvals))
-    idx2 <- match(names(res), names(tissue_res_Jiang$drug_targets[[x]]))
+    idx2 <- match(names(res), names(inputs$gene_lists))
     data.table(drug = names(res),
                # number of genes in the disease and drug lists
-               ngene_disease = length(tissue_res_Jiang$disease_genes[[x]]),
-               ngene_drug = lengths(tissue_res_Jiang$drug_targets[[x]][idx2]),
+               ngene_disease = length(inputs$disease_genes[[x]]),
+               ngene_drug = lengths(inputs$gene_lists[idx2]),
                semsim = res,
                pval = pvals[idx1])
 }, USE.NAMES = T, simplify = F)
@@ -181,7 +182,7 @@ res_df <- Reduce(function(x, y) {
 
 ```{r}
 # save
-fwrite(res_df, "results_table_collated_nperm_100_Jiang.txt", sep="\t")
+fwrite(res_df, "results_table_collated_nperm_100_Jiang_LINCS_drugbank_filtered.txt", sep="\t")
 ```
 
 

@@ -92,11 +92,11 @@ tissue_tables <- sapply(tissues, function(x) {
     res <- tissue_res[[x]]
     pvals <- pval_list[[x]]
     idx1 <- match(names(res), names(pvals))
-    idx2 <- match(names(res), names(tissue_res_Jiang$drug_targets[[x]]))
+    idx2 <- match(names(res), names(inputs$drug_targets[[x]]))
     data.table(drug = names(res),
                # number of genes in the disease and drug lists
-               ngene_disease = length(tissue_res_Jiang$disease_genes[[x]]),
-               ngene_drug = lengths(tissue_res_Jiang$drug_targets[[x]][idx2]),
+               ngene_disease = length(inputs$disease_genes[[x]]),
+               ngene_drug = lengths(inputs$drug_targets[[x]][idx2]),
                semsim = res,
                pval = pvals[idx1])
 }, USE.NAMES = T, simplify = F)

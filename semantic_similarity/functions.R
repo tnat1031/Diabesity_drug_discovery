@@ -10,10 +10,13 @@ jaccard <- function(x, y) {
 # this will simply wrap the clusterSim function from GOSemSim
 # also enable support for simple jaccard index, which we can use to compare
 # with semantic similarity metrics
+# rewrite this using future package, which has better support for parallel
+# access to SQLite objects such as hsGO (AnnotationDbi object)
 disease_drug_sim <- function(disease_gene_list, drug_gene_lists, measure,
                              mc.cores=4, ...) {
-    # use mclapply to run computations in parallel
-    res <- mclapply(drug_gene_lists, function(x) {
+    # use future to run computations in parallel
+    plan(multicore, workers = mc.cores)
+    res <- future.apply::future_lapply(drug_gene_lists, function(x) {
         tryCatch({
             if (measure=="jaccard") {
                 # just compute jaccard index
@@ -25,7 +28,7 @@ disease_drug_sim <- function(disease_gene_list, drug_gene_lists, measure,
                 message(e, " ", x, "\n")
                 return(NA)
             })
-    }, mc.cores = mc.cores)
+    })
     names(res) <- names(drug_gene_lists)
     # unlist so res becomes a vector
     return(unlist(res))

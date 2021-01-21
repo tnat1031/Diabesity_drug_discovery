@@ -13,8 +13,8 @@ How to estimate siginficance? Could try random gene sets of same size as compoun
 
 ```{r}
 # use pre-existing
-inputs <- readRDS("inputs.rds")
-tissue_res <- readRDS("tissue_res_Jiang.rds")
+inputs <- readRDS("inputs_LINCS_backward_compat_drugbank_filtered.rds")
+tissue_res <- readRDS("tissue_res_Jiang_LINCS.rds")
 ```
 
 # Test with one tissue type
@@ -48,10 +48,9 @@ foo_pval <- sapply(rownames(foo_res_mat), function(x) {
 And using more permutations. Make null sets with 1,000 permutations each. We'll see if we can actually compute that many similarities.
 ```{r}
 # seems reasonable - let's do for all tissues at 1e3
-null_sets <- sapply(drug_targets, make_null_sets, nperm=1e3, USE.NAMES = T,
-                    simplify = F)
+null_sets <- make_null_sets(inputs$gene_lists, nperm=1e3)
 # save these
-saveRDS(null_sets, "null_sets.rds", version=2) # for backward compatibility
+saveRDS(null_sets, "null_sets_LINCS_drugbank_filtered.rds", version=2) # for backward compatibility
 ```
 
 Do this one tissue at a time and save the intermediate results so we can pick up where we left off if necessary.
@@ -70,19 +69,29 @@ tissues <- names(tissue_res)
 for (x in tissues) {
     message(x)
     dx_genes <- inputs$disease_genes[[x]]
-    this_res <- sapply(null_sets[[x]][1:nperm], function(ns) {
+    this_res <- sapply(null_sets[1:nperm], function(ns) {
         disease_drug_sim(dx_genes, ns, semData=inputs$hsGO, measure="Jiang")
         # ok to simplify this - will give a matrix
     }, USE.NAMES = T, simplify = T)
-    saveRDS(this_res, sprintf("null_res_%s_nperm_%d_Jiang.rds", x, nperm))
+    saveRDS(this_res, sprintf("null_res_%s_nperm_%d_Jiang_LINCS_drugbank_filtered.rds", x, nperm))
     null_res[[x]] <- this_res
 }
 ```
 
+NB: some small fraction of these values are NA. I'm not immediately sure why but it could be a stochastic issue with parallel access to the SQLite `hsGO` object.
 ```{r}
 # save the full result
-saveRDS(null_res, "null_res_all_tissues_nperm_100_Jiang.rds")
+saveRDS(null_res, "null_res_all_tissues_nperm_100_Jiang_LINCS_drugbank_filtered.rds")
 ```
+
+Check if the NA values are biased towards any one compound (this would be a problem).
+```{r}
+rs <- sapply(null_res, function(x) {
+  rowSums(is.na(x))
+})
+range(rs) # 0 17
+```
+Ok this doesn't seem to be a problem. No real bias towards any compound.
 
 ```{r}
 # compute p-values
@@ -95,14 +104,12 @@ pval_list <- sapply(tissues, function(x) {
   sapply(names(this_res), function(drug) {
     this_sem_sim <- this_res[[drug]]
     this_cdf <- cdf_list[[x]][[drug]]
-    # NB- need to correct this
-    # pvalue should be 1 - the cdf evaluated at given semsim score
     1 - this_cdf(this_sem_sim)
   }, USE.NAMES = T)
 }, USE.NAMES = T, simplify = F)
 
 # save
-saveRDS(pval_list, "pval_lists_all_tissues_nperm_100_Jiang.rds")
+saveRDS(pval_list, "pval_lists_all_tissues_nperm_100_Jiang_LINCS_drugbank_filtered.rds")
 ```
 
 

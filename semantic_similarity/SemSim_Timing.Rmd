@@ -25,6 +25,7 @@ source("functions.R")
 
 ```{r}
 # inistialize a GOSemSimDATA object to contain the GO term to symbol mapping
+# NB: this may need to be run on the server in order for the object to be formed correctly
 hsGO <- godata('org.Hs.eg.db', ont="MF", keytype = "SYMBOL")
 ```
 
