@@ -60,7 +60,7 @@ saveRDS(network_graphs, "background_networks.rds")
 # only genes in the graph object
 # need to do this for each tissue separately
 inputs_filt <- inputs[c("drug_targets", "disease_genes")]
-universe <- names(V(g))
+universe <- Reduce(union, lapply(network_graphs, function(g) names(V(g))))
 inputs_filt$disease_genes <- filter_gene_lists(inputs_filt$disease_genes,
                                                universe = universe)
 inputs_filt$drug_targets <- sapply(inputs_filt$drug_targets, function(x) {
