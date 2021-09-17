@@ -80,3 +80,18 @@ sample_degree <- function(deg, deg_binned, gene_list) {
         sample(names(deg)[idx], freq, replace=F)
     }))
 }
+
+# for chunking a vector
+chunk_vector <- function (x, chunk_size = 4) {
+    stopifnot(is.vector(x))
+    stopifnot(is.null(dim(x)))
+    stopifnot(length(x) > 0)
+    n <- length(x)
+    l <- list()
+    i <- 1
+    while (i <= n) {
+        l[[length(l) + 1]] <- x[i:min((i + chunk_size - 1), n)]
+        i <- i + chunk_size
+    }
+    return(l)
+}

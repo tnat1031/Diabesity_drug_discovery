@@ -189,7 +189,7 @@ for (network in networks) {
     for (tissue in tissues) { # edited to skip completed tissues
         # running out of memory at intermediaate steps,
         # so save the results in chunks
-        chunks <- roller::chunk_vector(seq_len(nperm), chunk_size)
+        chunks <- chunk_vector(seq_len(nperm), chunk_size)
         for (y in seq_along(chunks)) { # 
             res <- lapply(chunks[[y]], function(i) {
                 message(sprintf("%s %s chunk %d iter %d", network, tissue, y, i))
