@@ -1,0 +1,76 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This short snippet will illustrate how to parse and organize pathway gene lists stored in long format so that they can be used for downstream analysis.
+
+Read existing `inputs` object from semantic similarity analysis. We will simply be modifying the `inputs$disease_genes` object, which is simply a list of vectors, where each vector contains the genes for a particular pathway.
+```{r}
+inputs <- readRDS("../semantic_similarity/inputs.rds")
+```
+
+Read first sheet of excel table. Modify this path as necessary.
+```{r}
+if (!require(readxl)) install.packages("readxl")
+library(readxl)
+library(data.table)
+
+# modify this path as needed
+pathways <- read_xlsx("~/work/Subhajit/Co-Expression_network/pathways_format.xlsx")
+pathways <- data.table(pathways)
+# convert the gene ids to characters
+pathways$entrez_id <- as.character(pathways$entrez_id)
+```
+
+Split the long table of pathways into a list of lists using the `split` function
+```{r}
+pathway_lists <- split(pathways$entrez_id, pathways$pathways)
+```
+
+Now we can simply overwrite the `disease_genes` object with our new set of pathway lists.
+```{r}
+inputs$disease_genes <- pathway_lists
+```
+
+The following code is modified slightly because now we have a set of pathway gene lists, rather than a single disease gene list for each tissue type.
+```{r}
+# little helper function to organize the data
+hf <- function(tissues, networks=network_graphs,
+               disease_genes=inputs$disease_genes,
+               drug_targets=inputs$drug_targets,
+               patt="^PPI") {
+    # initial list to store the data
+    l <- sapply(tissues, function(x) {
+        idx <- grep(paste(patt, x, sep="_"), names(networks))
+        bn <- networks[[idx]]
+        dg <- disease_genes # not specific to any tissue
+        dt <- drug_targets[[x]]
+        # filter so that the gene lists are all subsets of the genes in the
+        # background network
+        universe <- names(V(bn))
+        dg <- filter_gene_lists(dg, universe = universe)
+        dt <- filter_gene_lists(dt, universe = universe)
+        list(
+            background_network = bn,
+            disease_genes = dg,
+            drug_targets = dt
+        )
+    }, USE.NAMES = T, simplify = F)
+    return(l)
+}
+```
+
+```{r}
+tissues <- setdiff(names(inputs$drug_targets), "Commonly_expressed")
+obj <- list(
+    PPI = hf(tissues, patt="^PPI"),
+    GCN = hf(tissues, patt="^GCN")
+)
+```
+
+```{r}
+# save
+saveRDS(obj, "inputs_pathway_lists.rds")
+```
+
