@@ -1,4 +1,6 @@
-# Subhajit-drug-disease
+# Diabesity drug discovery
+
+Code for executing semantic similarity and proxmiity anlayses as in [Dutta et al 2022.](https://www.sciencedirect.com/science/article/pii/S235230422200071X)
  
 This repository contains the code to perform semantic similarity and proximity score analyses comparing drug and disease signatures, where each signature is encoded as a list of genes. This code is still a work in progress.
 
